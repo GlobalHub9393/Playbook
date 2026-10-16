@@ -6,10 +6,10 @@
 @media print{*{box-shadow:none!important}body{background:white;color:#111}#app,.modal-shade,.toast{display:none!important}.print-only{display:block!important}#print-root{margin:0;font-family:Georgia,serif;padding:0}.print-front{margin:0 0 22px;padding-bottom:14px;border-bottom:2px solid #8f999b}.print-front h1{font-size:22pt;margin:7px 0}.print-meta{font:9pt Arial,sans-serif;color:#666}.print-guide{break-before:page}.print-guide:first-of-type{break-before:auto}.print-guide h2{font-size:17pt;margin:22px 0 5px}.print-guide h3{font-size:12pt;margin:15px 0 8px;break-after:avoid}.print-copy-frame{position:relative}.print-copy{font:10pt/1.7 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}.print-copy mark{-webkit-print-color-adjust:exact;print-color-adjust:exact}.print-note{margin:7px 0 10px;padding:7px;border-left:2px solid #6785a4;font:9pt/1.45 Arial,sans-serif;break-inside:avoid}.print-note small{display:block;color:#676767}.print-section{break-inside:avoid-page;position:relative}.print-path{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.print-sub{font:9pt Arial,sans-serif;color:#666}.print-foot{font:8pt Arial,sans-serif;color:#777;padding-top:10px;border-top:1px solid #ccc;margin-top:30px}@page{size:letter;margin:16mm 18mm}}
 
 .login-wrap{min-height:95vh;display:grid;place-items:center;padding:20px;background:#e8e0ce}.login-card{width:min(100%,470px);background:#fffdf6;border:1px solid #c9baa0;box-shadow:0 15px 55px #59493533;padding:35px;border-radius:12px}.login-card h1{font:700 45px Georgia,serif;color:#264456;margin:10px 0}.login-card p{font-size:14px;line-height:1.65;color:#66726e}.login-card label{display:block;margin-top:12px;font-size:12px;font-weight:700}.login-card input{width:100%;padding:12px;border:1px solid #c6c1b5;border-radius:7px;font-size:16px;margin-top:5px}.login-card .form-actions{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}.login-card .login-foot{font-size:11px;margin-top:28px}.login-card #auth-message{color:#924c43}.login-card .notice{margin:14px 0}
-</style></head><body><div id="app"></div><div id="print-root" class="print-only"></div><div id="modal-root"></div><div id="toast-root" class="toast" style="display:none"></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.0/dist/umd/supabase.min.js"></script><script>// Cinnaminson Playbook: authenticated data is kept in Supabase, not in this public source.
+</style></head><body><div id="app"><div class="login-wrap"><section class="login-card"><div class="eyebrow">GLOBAL WIRELESS · CINNAMINSON</div><h1>The Playbook</h1><p id="startup-message">Opening the store notebook…</p></section></div></div><div id="print-root" class="print-only"></div><div id="modal-root"></div><div id="toast-root" class="toast" style="display:none"></div><script>// Cinnaminson Playbook: authenticated data is kept in Supabase, not in this public source.
 const URL='https://uwomiirfvllcafijmkmk.supabase.co';
 const PUBLIC_KEY='sb_publishable_UMb8Nb5DG0w1dv9h5W5-2Q_0PinuBV4';
-const sb=window.supabase?.createClient(URL,PUBLIC_KEY);
+let sb=null;
 const $=s=>document.querySelector(s);
 const esc=t=>String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const colors=['#ffe778','#b6e0bc','#9fcef7','#eebaca','#cdb4f0','#f4c39a'];
@@ -83,5 +83,20 @@ const a=b.dataset.action;if(!a)return;if(a==='close'){closeModal();return}if(a==
 document.addEventListener('input',e=>{if(e.target.id==='search'){ui.query=e.target.value;let pos=e.target.selectionStart;render();let newSearch=$('#search');newSearch?.focus();newSearch?.setSelectionRange(pos,pos)}});
 window.addEventListener('afterprint',()=>{$('#print-root').innerHTML=''});
 window.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-void boot();
+(function startPlaybook(){
+ const start=document.getElementById('startup-message');
+ const lib=document.createElement('script');
+ lib.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.0/dist/umd/supabase.min.js';
+ lib.async=true;
+ let finished=false;
+ const fail=message=>{if(finished)return;finished=true;if(start)start.textContent=message+' Please refresh or ask your manager for help.';};
+ const watchdog=setTimeout(()=>fail('The login service took too long to load.'),12000);
+ lib.onload=()=>{if(finished)return;clearTimeout(watchdog);finished=true;
+  if(!window.supabase?.createClient){if(start)start.textContent='The login library could not start. Please refresh.';return;}
+  try{sb=window.supabase.createClient(URL,PUBLIC_KEY);void boot();}
+  catch(e){if(start)start.textContent='The Playbook could not start: '+e.message;}
+ };
+ lib.onerror=()=>{clearTimeout(watchdog);fail('The login library could not be downloaded.')};
+ document.head.appendChild(lib);
+})();
 </script></body></html>
