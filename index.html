@@ -73,6 +73,17 @@ body{background:var(--tx-base);color:var(--tx-ink);font-family:ui-sans-serif,-ap
 .tx-quick-tip p{color:#5c482f;font-size:13px;line-height:1.65;margin:7px 0 0}
 .tx-card:focus-visible,.tx-path-pill:focus-visible,.tx-primary:focus-visible,.tx-secondary:focus-visible,.tx-side-link:focus-visible{outline:3px solid #ca945a;outline-offset:3px}
 @media(max-width:780px){.tx-workspace{padding-bottom:105px}.tx-nav{gap:10px}.tx-nav button{min-height:46px}.tx-quick-tip p{font-size:13px}}
+
+/* Audit v3: reminders only, explicit branching, how first, why optional */
+.tx-action-row{cursor:pointer;position:relative;gap:11px}.tx-action-check{width:21px;height:21px;flex:0 0 21px;margin:3px 0 0;accent-color:#44617c;cursor:pointer}.tx-action-row .tx-action-num{min-width:28px;flex:0 0 28px}.tx-action-text{font-size:14px;line-height:1.6;color:#2c4050;flex:1;overflow-wrap:anywhere}.tx-action-row.is-checked .tx-action-text{color:#697979}.tx-action-row.is-checked .tx-action-num{background:#e1ebdf;border-color:#b4ccb3;color:#3d6649}.tx-reminder{font-size:11px;line-height:1.55;color:#7c8987;margin:-8px 0 10px}.tx-why{border:1px solid #e2ded2;border-radius:10px;background:#f8f6f0;margin-top:13px;padding:0 14px}.tx-why summary{padding:12px 2px;cursor:pointer;font-size:12px;font-weight:750;color:#56708a}.tx-why p{margin:0 0 13px;font-size:12px;line-height:1.7;color:#596571}.tx-audit{border:1px solid #d7d8cd;background:#f7f8f3;border-radius:13px;padding:0 17px;margin:0 0 20px}.tx-audit>summary{font-size:13px;cursor:pointer;font-weight:760;color:#324d5d;padding:16px 0;line-height:1.5}.tx-audit>summary small{display:block;margin-top:2px;color:#808b81;font-size:10px;font-weight:400}.tx-audit-list{display:grid;gap:2px;padding-bottom:10px}.tx-audit-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:12px;line-height:1.55;color:#425566;cursor:pointer}.tx-audit-item input{accent-color:#536f80;width:17px;height:17px;flex:0 0 17px;margin-top:1px}.tx-audit-foot{font-size:10px;line-height:1.65;color:#8a8e83;border-top:1px solid #e3e7da;padding:10px 0 14px;margin:0}.tx-group-choices{margin:0 0 10px;padding:15px 17px 13px;border:1px solid #e1dacd;border-radius:13px;background:#fffdf8}.tx-group-pill{background:#fff;border:1px solid #d7d8d5;color:#40596e;border-radius:9px;padding:11px 13px;margin:0 8px 6px 0;font-size:12px;font-weight:740;min-height:43px}.tx-group-pill.active{background:#304962;color:#fff;border-color:#304962}.tx-reader-top-actions{flex-wrap:wrap;justify-content:flex-end}.tx-finished-icon{color:#335d4a}.tx-finished p{line-height:1.7}.tx-path-box{margin-bottom:15px}.tx-path-pill{white-space:normal;text-align:left;line-height:1.4}.tx-quick-tip{box-shadow:inset 3px 0 #b98755}.tx-workspace input[type=checkbox]:focus-visible,.tx-workspace summary:focus-visible{outline:3px solid #c99962;outline-offset:3px}.tx-step-map button.current{background:#395873}
+@media(max-width:780px){.tx-action-row{gap:10px}.tx-reader-top-actions{gap:6px}.tx-outline{font-size:11px;padding:9px}.tx-group-pill{width:100%;text-align:left;margin-right:0}.tx-group-choices{padding:12px 13px}.tx-audit{padding:0 12px}.tx-reminder{font-size:11px}}
+
+
+.tx-more-reference{margin:26px auto 0;max-width:990px;border:1px solid #e1d8c7;background:#fffdf8;border-radius:13px;padding:21px}.tx-more-reference h2{font:700 23px Georgia,serif;margin:0 0 6px;color:#2e4558}.tx-more-reference p{font-size:12px;color:#7b807c;line-height:1.6}.tx-more-reference>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.tx-more-reference button{min-height:50px;display:flex;justify-content:space-between;align-items:center;text-align:left;border:1px solid #dedacc;border-radius:9px;background:#f9f7f0;padding:12px;font-size:13px;color:#2a445c;font-weight:700}.tx-more-reference button span{font-size:20px;color:#9a9c94}@media(max-width:650px){.tx-more-reference>div{grid-template-columns:1fr}}
+
+/* Playbook AI · note-first grounded procedure search */
+.pb-ai-panel{margin-top:17px}.pb-ai-form{display:flex;align-items:center;gap:10px;padding:9px 9px 9px 14px;border:1px solid #b5c7d0;border-radius:13px;background:#fff;box-shadow:0 5px 0 rgba(28,58,84,.05)}.pb-ai-form>span{font-size:23px;color:#49798b}.pb-ai-form input{flex:1;min-width:0;border:0;outline:none;background:transparent;font:500 14px/1.5 system-ui;color:#253f50;padding:5px 0}.pb-ai-form button{border:0;border-radius:9px;background:#233f55;color:#fff;font-size:12px;font-weight:800;padding:13px 17px;white-space:nowrap;cursor:pointer}.pb-ai-form button:disabled{opacity:.6;cursor:wait}.pb-ai-disclaimer{font-size:11px!important;color:#7a8082!important;margin:7px 3px 13px!important}.pb-ai-status,.pb-ai-error{padding:13px 15px;border-radius:10px;font-size:13px;background:#eff2f2;color:#375d72}.pb-ai-error{background:#fff0e8;color:#99473e}.pb-ai-answer{border:1px solid #c8d4d6;border-radius:13px;background:#fcfff9;padding:18px 20px;margin:11px 0 23px;text-align:left;box-shadow:0 6px 22px rgba(47,72,76,.06)}.pb-ai-answer-head{display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid #dde4e0;padding-bottom:9px}.pb-ai-answer-head span{font-size:10px;color:#4b7880;font-weight:850;letter-spacing:.09em}.pb-ai-answer-head small{font-size:10px;color:#718189}.pb-ai-answer>p{font-size:14px!important;line-height:1.65!important;color:#263b44!important;white-space:pre-wrap;margin:15px 0!important}.pb-ai-steps{display:flex;flex-direction:column;gap:9px;margin:10px 0}.pb-ai-steps>div{display:flex;gap:11px;font-size:13px;line-height:1.5;color:#344550}.pb-ai-steps b{color:#a16d5a;font-size:11px;font-family:monospace}.pb-ai-refs{margin-top:15px;padding-top:13px;border-top:1px dashed #d6dfde;display:flex;flex-direction:column;gap:7px}.pb-ai-refs>strong{font-size:11px;letter-spacing:.07em;color:#54727e;text-transform:uppercase}.pb-ai-refs button{border:1px solid #d0d9d6;background:#f7f8f4;color:#2c4d63;text-align:left;padding:10px 11px;font-size:12px;font-weight:750;border-radius:8px}.pb-ai-refs button span{float:right}.pb-ai-proposal{margin-top:14px;border:1px solid #e6c88d;background:#fff9e7;border-radius:10px;padding:13px 14px}.pb-ai-proposal small{display:block;font-size:10px;color:#8d693a;font-weight:850;letter-spacing:.05em}.pb-ai-proposal strong{display:block;margin:7px 0;font-size:13px;color:#594d32}.pb-ai-proposal p{white-space:pre-wrap;font-size:13px;color:#3d4739;line-height:1.6}.pb-ai-proposal-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.pb-ai-proposal-bottom>span{font-size:11px;color:#756a58;flex:1}.pb-ai-proposal-bottom button{border:none;background:#385e72;color:#fff;padding:10px 12px;border-radius:8px;font-size:12px;font-weight:750}.pb-ai-saved{background:#e5f1e3;padding:10px;border-radius:8px;font-size:12px;color:#3a674b;margin-top:12px}.pb-ai-gtt{display:inline-block;font-size:12px!important;padding-top:14px}.pb-ai-team-notes{border:1px solid #e3d5ab;background:#fff9e9;border-radius:11px;padding:14px 17px;margin:15px 0}.pb-ai-team-notes>summary{font-size:13px;color:#706042;font-weight:780;cursor:pointer}.pb-ai-team-notes>summary span{color:#86795e}.pb-ai-team-note{padding:10px 0;border-top:1px solid #e5d7b5;margin-top:9px}.pb-ai-team-note p{font-size:13px;color:#45463b;line-height:1.6;white-space:pre-wrap;margin:0}.pb-ai-team-note small{color:#817658;font-size:10px}.pb-ai-form:focus-within{outline:2px solid #83aeba;outline-offset:2px}
+@media(max-width:580px){.pb-ai-form{flex-wrap:wrap;padding:11px}.pb-ai-form>span{font-size:20px}.pb-ai-form input{flex:1 1 calc(100% - 40px);font-size:14px}.pb-ai-form button{width:100%}.pb-ai-answer{padding:15px 13px}.pb-ai-answer-head{align-items:flex-start;flex-direction:column}}
 </style></head><body><div id="app"><div class="login-wrap"><section class="login-card"><div class="eyebrow">GLOBAL WIRELESS · CINNAMINSON</div><h1>The Playbook</h1><p id="startup-message">Opening the store notebook…</p></section></div></div><div id="print-root" class="print-only"></div><div id="modal-root"></div><div id="toast-root" class="toast" style="display:none"></div><script>// Cinnaminson Playbook: authenticated data is kept in Supabase, not in this public source.
 const SUPABASE_URL='https://uwomiirfvllcafijmkmk.supabase.co';
 const PUBLIC_KEY='sb_publishable_UMb8Nb5DG0w1dv9h5W5-2Q_0PinuBV4';
@@ -91,7 +102,7 @@ let selection=null,stroke=null;
 const admin=()=>me?.role==='admin';
 const guide=id=>data.guides.find(x=>x.id===id);
 const chapter=id=>data.chapters.find(x=>x.id===id);
-const guideSteps=id=>data.steps.filter(x=>x.guide_id===id).sort((a,b)=>a.display_order-b.display_order);
+const guideSteps=id=>data.steps.filter(x=>x.guide_id===id&&!String(x.slug||'').startsWith('walkthrough--')).sort((a,b)=>a.display_order-b.display_order);
 const ann=(g,s)=>data.annotations.filter(x=>x.guide_id===g&&x.step_slug===s&&!x.needs_review);
 const openKey=(g,s)=>g+'/'+s;
 const opened=(g,s)=>ui.open[openKey(g,typeof s==='string'?s:s.slug)]===true;
@@ -185,6 +196,7 @@ function render(){if(!authed()){$('#app').innerHTML=loginPage();$('#modal-root')
 function navigate(page,id){if(page==='reader')txReset(id||ui.guide);if(page==='reader'&&(ui.page!=='reader'||(id&&id!==ui.guide))){ui.open={};ui.prepChecks=new Set();}ui.page=page;if(page==='reader'&&id)ui.guide=id;if(page==='chapter'&&id)ui.chapter=id;ui.markup=false;selection=null;render();window.scrollTo(0,0)}
 function renderModal(){const root=$('#modal-root');if(!modal){root.innerHTML='';return}let content='';if(modal.type==='note')content='<h2>New team note</h2><p>Notes are shared with everyone on the team.</p><label>Type your note</label><textarea id="modal-text" maxlength="2000" placeholder="Tip, correction or reminder…"></textarea><div class="modal-row">'+button('Cancel','close')+button('Post note','save-note','pill primary')+'</div>';
 else if(modal.type==='edit'||modal.type==='new-step'){let s=modal.step||{};content='<h2>'+(modal.type==='edit'?'Edit official step':'New procedure step')+'</h2><p>Changes here affect the official instructions for all staff.</p><label>Step title</label><input id="modal-title" value="'+esc(s.title||'')+'"><label>Instructions — one action per line</label><p class="editor-hint">Use a., b., c. for main instructions. Indent substeps with aa., ab. under a, or ba., bb. under b. Saved instructions are shared with the store.</p><textarea id="modal-text" class="official-editor" spellcheck="true" placeholder="a. First action&#10;aa. Optional detail under a&#10;b. Next action">'+esc(editorInstructions(s.body||''))+'</textarea><div class="modal-row">'+button('Cancel','close')+button('Save official step','save-official','pill primary')+'</div>'}
+else if(modal.type==='txedit'){let t=modal.step||{};content='<h2>Edit walkthrough step</h2><p>Changes to the transaction walkthrough are shared in Supabase; the complete Reference is separate. Nothing is graded.</p><label>Screen / step title</label><input id="tx-title" value="'+esc(t.title||'')+'"><label>What the rep does · one action per line</label><textarea id="tx-actions" class="official-editor">'+esc((t.actions||[]).join('\n'))+'</textarea><label>Important warning (always visible)</label><textarea id="tx-tip" rows="3">'+esc(t.help||'')+'</textarea><label>Why? (optional, expandable)</label><textarea id="tx-why" rows="3">'+esc(t.why||'')+'</textarea><label class="radio-line"><input type="checkbox" id="tx-unverified" '+(t.review?'checked':'')+'> Requires live demonstration / verification</label><div class="modal-row">'+button('Cancel','close')+'<button class="pill primary" data-tx="save-tx-step">Save walkthrough step</button></div>'}
 else if(modal.type==='status')content='<h2>Guide status</h2><p>Pending workflows must not be presented as approved.</p><select id="modal-status">'+['draft','pending','reviewed','published'].map(v=>'<option value="'+v+'" '+(guide(ui.guide)?.status===v?'selected':'')+'>'+v+'</option>').join('')+'</select><div class="modal-row">'+button('Cancel','close')+button('Save','save-status','pill primary')+'</div>';
 else if(modal.type==='print')content='<h2>Print / Save as PDF</h2><p>Choose the section and whether team annotations should appear.</p><label>Print scope</label>'+[['guide','Current procedure'],['chapter','Entire chapter'],['book','Complete Playbook']].map(([v,l])=>'<label class="radio-line"><input type="radio" name="print-scope" value="'+v+'" '+(ui.printScope===v?'checked':'')+'>'+l+'</label>').join('')+'<label>Appearance</label>'+[['notebook','Notebook with team notes & marks'],['clean','Clean official instructions']].map(([v,l])=>'<label class="radio-line"><input type="radio" name="print-style" value="'+v+'" '+(ui.printStyle===v?'checked':'')+'>'+l+'</label>').join('')+'<label class="radio-line"><input type="checkbox" id="print-authors" '+(ui.printAuthors?'checked':'')+'> Include note authors</label><div class="modal-row">'+button('Cancel','close')+button('Print / Save PDF','do-print','pill primary')+'</div>';
 else if(modal.type==='account')content='<h2>Your account</h2><p><strong>'+esc(me.display_name)+'</strong> · '+(admin()?'Administrator':'Representative')+'</p><p>'+esc(session?.user?.email||'')+'</p><div class="modal-row">'+(admin()?button('Manage staff access','members'):'')+button('Sign out','signout')+button('Close','close','pill primary')+'</div>';
@@ -273,7 +285,7 @@ const a=b.dataset.action;if(!a)return;if(a==='close'){closeModal();return}if(a==
 document.addEventListener('input',e=>{if(e.target.id==='search'){ui.query=e.target.value;let pos=e.target.selectionStart;render();let newSearch=$('#search');newSearch?.focus();newSearch?.setSelectionRange(pos,pos)}});
 window.addEventListener('afterprint',()=>{$('#print-root').innerHTML=''});
 window.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-// TRANSACTION-FIRST EXPERIENCE · v2 · Leaves auth, official editing, markup and Supabase storage intact.
+// THE PLAYBOOK · audited v3 · transaction checklists, reference & Supabase guided editing.
 let tx={guide:null,path:null,step:0,help:false,done:false,view:'walkthrough',category:'all',refOrigin:null};
 const TX_GUIDES={
  'upgrade':[
@@ -376,30 +388,194 @@ const TX_GUIDES={
  ]}
  ]
 };
-function txGuidePaths(id){const existing=TX_GUIDES[id];if(existing)return existing;const steps=guideSteps(id).map(s=>({dbStep:s}));return [{id:'standard',name:'Step-by-step',caption:'Official procedure',steps:steps.length?steps:[['Walkthrough not yet verified',['The exact buttons for this procedure have not yet been confirmed.','Open Reference & notes for any existing official instructions.','Ask your manager or check current CCKM before processing this transaction.'],'Do not guess at customer-affecting steps.',true]]}]}
+
+// AUDITED WORKFLOWS: distinct equipment types, no serialized/accessory cross-over.
+// Kept separate from policy references, which remain editable in Supabase.
+const TX_EXTRA={
+ 'returns':[
+ {id:'serial-return',group:'Serialized equipment',name:'Return a device',caption:'IMEI / serial-number tracked equipment · OPUS original sale',steps:[
+ ['Confirm device return eligibility',['Verify the authorized customer and the original sale date/channel.','Check the correct device IMEI or serial number, condition and applicable CCKM return window.','Confirm whether this is a merchandise return, an upgrade reversal or an exchange before continuing.'],'A visible Return button does not establish return eligibility.'],
+ ['Find the original sale in OPUS',['Open the verified customer account in OPUS.','Open Sales Transaction History → View All Sales if needed.','Select the correct original sale, then select Return in Actions.']],
+ ['Select the serialized item',['On Transaction Details, mark the correct equipment row in the Return column.','Verify the serial or IMEI and Qty to Return.','If Find My is enabled, have the customer turn it off; select Retry FMI Status Check.'],'If Find My remains enabled, OPUS may display a manager-override warning. Follow current policy; do not casually override.'],
+ ['Reason, fee and return tag',['Select the accurate Reason for Return.','Review the Restocking Fee actually displayed by OPUS, if applicable.','Select Submit Returns and complete the required Return Tag when prompted.','Confirm the transaction processed and provide the receipt.'],'Returning serialized equipment does not by itself cancel an associated line or reverse an installment agreement.']
+ ]},
+ {id:'upgrade-reverse',group:'Serialized equipment',name:'Reverse an upgrade',caption:'OPUS Customer Summary → Reversal',steps:[
+ ['Open the reversal workflow',['Verify the customer and select the correct upgraded line in OPUS.','On Customer Summary, select Reversal near Upgrade.','Choose Reverse Upgrade.'],'A reversal affects the upgrade transaction, not just merchandise.'],
+ ['Confirm device return',['Review Return Device Confirmation.','Select Yes if the equipment will be returned; otherwise follow the applicable No path and terms.','If returning, select Return Item and Submit Return as prompted.'],'Do not choose Yes or No on the customer’s behalf. Verify the actual device being returned.'],
+ ['Restore the correct device',['Select Change the Equipment.','Choose Use Previous IMEI or scan the appropriate device IMEI, as prompted.','Verify the correct phone number and restored equipment.']],
+ ['Finish the reversal',['Select the accurate Upgrade Reversal Reason.','Select Submit, then Check Out when prompted.','Review the results, return paperwork, installment/upgrade status and any fees.','Verify the account reflects the intended outcome before advising the customer the reversal is finished.'],'If the transaction screens do not match, pause and check CCKM / management before changing the line.',true]
+ ]},
+ {id:'device-exchange',group:'Serialized equipment',name:'Exchange a device',caption:'Buyer’s remorse / defective equipment',steps:[
+ ['Verify exchange eligibility',['Check original purchase date/channel, IMEI, device condition and the specific exchange reason.','Determine whether OPUS offers the Exchange action and whether a replacement is in stock or must ship.','Confirm the current CCKM fee, promotion and installment rules before proceeding.']],
+ ['Use the OPUS exchange route',['Open the original sale and look for the available Exchange action.','Follow the offered replacement selection and return-processing screens.','If shipped, explain when the original equipment must be returned and track any required Return Claim Order.'],'Exact Exchange button sequence still needs a live demo. Do not substitute a standalone Return plus a new upgrade without confirming the correct policy.',true],
+ ['Confirm equipment and account',['Verify new and old IMEIs, activation, payment difference and replacement timing.','Finish the equipment return and give the customer the receipts and next steps.'],'Exchange may affect promotions or credits; confirm before checkout.',true]
+ ]},
+ {id:'shipped-return',group:'Serialized equipment',name:'Return shipped equipment',caption:'Direct Fulfillment / pickup-related returns',steps:[
+ ['Find the order and eligibility',['Look up the correct original shipped sale and delivery status.','Verify who may process the return, applicable return window and whether equipment has been received or activated.']],
+ ['Follow the order-specific return',['Use the return method available for that order in OPUS / the approved store workflow.','Verify the device IMEI, return label/tag and any required Return Claim Order.','If the order has not shipped, check the appropriate cancellation process instead of assuming a physical return applies.'],'Exact shipped-return button labels and routing still require a demo. Some orders need RST help.',true],
+ ['Confirm the result',['Verify the return or cancellation was accepted.','Review service, installments, port and any promotional consequences.','Provide tracking or receipt details and next steps.'], 'An unreturned shipped device can have financial consequences.']
+ ]},
+ {id:'device-warranty',group:'Serialized equipment',name:'Device warranty help',caption:'DOA / eligible manufacturer warranty',steps:[
+ ['Check defect and dates',['Verify the exact device, purchase date, warranty/DOA eligibility and damage/Find My status.','Check applicable CCKM device and manufacturer exceptions.']],
+ ['Select the correct service path',['For a qualifying in-period DOA, follow the approved buyer’s-remorse/DOA procedure.','For an eligible later manufacturer warranty issue, check Exchange by Mail (XBM) routing and current rules.','For XBM warranty questions, use 800-801-1101 when applicable.'],'This is not a J-Line accessory exchange. Do not treat it as non-serialized merchandise.']
+ ]},
+ {id:'accessory-return',group:'Non-serialized accessories',name:'Return an accessory',caption:'Ordinary eligible accessory merchandise return',steps:[
+ ['Locate the original transaction',['Check the accessory purchase, original receipt, condition and current return eligibility.','Verify the exact SKU and transaction being returned.']],
+ ['Process the eligible return',['Use the appropriate OPUS original sales transaction / Return path for this accessory sale.','Select the correct SKU and quantity, then the accurate reason.','Review any fee and refund method offered; submit only after customer approval.'],'Accessory screens can differ from serialized equipment. Exact buttons for non-serialized standalone returns still need a store demo.',true],
+ ['Verify refund and receipt',['Confirm the return completed and provide the receipt.','Handle the physical item under store inventory procedures.']]
+ ]},
+ {id:'jline',group:'Non-serialized accessories',name:'J-Line warranty exchange',caption:'Defective eligible accessory · replacement, not upgrade reversal',steps:[
+ ['Check warranty and product',['Verify the defective accessory and original AT&T purchase within the applicable one-year accessory warranty period.','Confirm the item and defect qualify under current CCKM policy.','Determine whether a manufacturer-only exception applies.'],'Apple/Beats and certain streaming products may require manufacturer warranty routing rather than store J-Line.'],
+ ['Find and print the receipt',['Find the original transaction in the customer’s account or obtain their original receipt.','Print a duplicate of the original receipt to accompany the defective accessory.']],
+ ['Select the replacement',['Find the correct replacement accessory in inventory and confirm the SKU.','If the same item has a changed SKU or an approved substitute is needed, follow the CCKM and manager-override rules before continuing.'],'Same SKU is standard. Changed SKU, unavailable SKU, or alternative product may require special approval and price/brand restrictions.'],
+ ['Invoice as J-Line',['Use the correct customer/CTN on the sale; for a customer without an account follow the anonymous sale flow.','Invoice the replacement using the J-Line transaction type.','Verify replacement item, amount and transaction before submitting.'],'Eligible accessory warranty exchanges should not be charged a restocking fee.'],
+ ['Collect and document',['Give the customer the replacement accessory.','Collect the defective accessory.','Attach the duplicate original receipt to the defective item for manager inspection and return processing.','Confirm the J-Line exchange invoice is complete.']]
+ ]},
+ {id:'accessory-exchange',group:'Non-serialized accessories',name:'Accessory purchase exchange',caption:'Change an eligible non-serialized purchase',steps:[
+ ['Verify the original accessory sale',['Find the original receipt, return window and current item condition.','Confirm whether this is an ordinary buyer’s-remorse exchange or a defective-item J-Line warranty claim.']],
+ ['Follow the correct exchange route',['For a defective eligible warranty item, switch to J-Line warranty exchange.','For a normal buyer’s-remorse exchange, use the authorized accessory return/exchange process for that original sale.','Verify differences in price, SKU, tax and fees before completing.'],'Exact ordinary accessory-exchange screen sequence is still awaiting a demonstration.',true]
+ ]}
+ ],
+ 'sim':[
+ {id:'physical',name:'Physical SIM',caption:'Replace or move a physical ICCID',steps:[
+ ['Verify and open the line',['Authenticate the customer and confirm the correct CTN, replacement device and any applicable fee.','Open the verified OPUS account and select the line.','CLICK the device MAKE AND MODEL to open its equipment details.']],
+ ['Change the physical SIM',['Locate the physical SIM change option.','Scan or enter the replacement ICCID.','Confirm phone number, device / IMEI and replacement SIM information before submitting.'],'Exact intermediate OPUS labels remain to be verified in a demo.',true],
+ ['Activate and test',['Submit the SIM change according to OPUS.','Install the SIM and restart the device if needed.','Verify outgoing/incoming calls, texts and cellular data.','If not working, check account state, SIM assignment and device compatibility.']]
+ ]},
+ {id:'esim',name:'eSIM',caption:'Transfer / activate an electronic SIM',steps:[
+ ['Verify and open the line',['Authenticate the customer and confirm correct CTN and intended device IMEI.','In the verified OPUS account, click the line’s device MAKE AND MODEL.']],
+ ['Use eSIM management',['Find the dedicated eSIM management area.','Follow the active OPUS eSIM replacement/activation prompts and verify device assignment.'],'Exact eSIM menu label and screens are awaiting a real demo. Do not guess the button names.',true],
+ ['Complete activation',['Follow the device eSIM setup instructions.','Verify service is active on the intended handset.','Test calls, messaging and cellular data; troubleshoot the account, lock or eSIM assignment if needed.']]
+ ]}
+ ],
+ 'aia-c':[
+ {id:'existing-store',name:'Existing · In-store hub',caption:'ACC consumer Internet Air · hub from inventory',steps:[
+ ['Check address and account',['Authenticate the existing customer in ACC.','Confirm the ACTUAL Internet Air service address and check eligibility.','Review plan price, current discounts and the customer’s needs; verify current CCKM offer terms.']],
+ ['Start Internet Air',['Open New Service Opportunities → Internet Air in the correct existing account.','Review service address and eligible offering.','Complete verification, credit and any displayed prepayment screens required by Salesforce.'],'Exact button wording and current prepayment tiers will be confirmed in the demo.',true],
+ ['Fulfill gateway from store',['Choose IN STORE fulfillment.','Scan the gateway SERIAL NUMBER (S/N) and verify the correct physical hub.','Skip shipping information when Salesforce permits.']],
+ ['Finish order and activate',['Review service charges, customer acceptance and the order summary.','Complete in-store activation as prompted.','Return to Salesforce and verify that Internet Air/service actually shows ACTIVE.'],'Do not count an order as activated merely because checkout was submitted.',true],
+ ['Help the customer set up',['Install/open Smart Home Manager with the customer.','Use an existing AT&T ID or New User ID → Internet Air when needed.','Explain placing the All-Fi Hub, connecting home devices and completing self-installation at home.','Confirm account access and that the customer knows the next step.']]
+ ]},
+ {id:'new-store',name:'New · In-store hub',caption:'New customer · hub from inventory',steps:[
+ ['Check address and eligibility',['From ACC Home, begin New Customer.','Enter the ACTUAL service address and confirm Internet Air eligibility and plan offering.','Discuss monthly cost, terms and installation needs.']],
+ ['Begin Internet Air order',['Use New Service Opportunities → Internet Air after new-customer entry.','Complete customer identity, credit and any displayed prepayment requirements.'],'Exact wording and required account-creation screens are pending a demo.',true],
+ ['Scan in-store hub',['Select IN STORE fulfillment and scan gateway SERIAL NUMBER (S/N).','Verify the equipment and skip shipping details when offered.']],
+ ['Finish and activate',['Review customer acceptance, price, order and fulfillment.','Submit and activate in-store following Salesforce prompts.','Verify the service shows ACTIVE in Salesforce after checkout.'],'Exact activation click is still to be recorded; do not assume submitted means active.',true],
+ ['Set up the customer',['Help install Smart Home Manager.','Choose New User ID → Internet Air if needed.','Confirm app access and explain home gateway placement and Wi-Fi setup.']]
+ ]},
+ {id:'existing-ship',name:'Existing · Shipped hub',caption:'ACC consumer Internet Air · hub unavailable in store',steps:[
+ ['Verify service address and account',['Authenticate the existing customer in ACC and check the ACTUAL Internet Air service address eligibility.','Review plan pricing and CCKM terms.']],
+ ['Create Internet Air order',['Open New Service Opportunities → Internet Air.','Complete customer verification, credit and any displayed prepayment requirements.'],'Exact screen wording to confirm in demo.',true],
+ ['Set shipping fulfillment',['If the store has no gateway in stock, select shipping fulfillment.','Verify the shipping destination and estimated delivery timeline; do not use IN STORE scan steps.']],
+ ['Review and submit',['Confirm service address, costs, acceptance and order confirmation.','Follow the shipped-gateway activation instructions shown; do not claim it is active until Salesforce confirms ACTIVE.'],'Activation timing and shipped flow require confirmation in a demo.',true],
+ ['Customer self-install',['Help with the AT&T account / Smart Home Manager access as appropriate.','Explain delivery, home gateway placement and activation steps.']]
+ ]},
+ {id:'new-ship',name:'New · Shipped hub',caption:'New customer · shipped Internet Air',steps:[
+ ['Start and check address',['ACC Home → New Customer.','Enter actual Internet Air service address and verify eligibility and price.']],
+ ['Create the order',['Use New Service Opportunities → Internet Air.','Complete the applicable identity, credit and displayed prepayment requirements.'],'Exact screen sequence pending demo.',true],
+ ['Ship gateway',['If the store is out of stock, choose shipping fulfillment.','Verify delivery address and estimated timeframe.']],
+ ['Submit and follow up',['Review and obtain acceptance for service terms and charges, then submit the order.','Explain how activation and account status will be confirmed; verify ACTIVE when appropriate.'],'Do not label shipped service active unless checked.',true],
+ ['Prepare home setup',['Help with Smart Home Manager access and an AT&T ID if needed.','Explain how to finish All-Fi Hub setup at home.']]
+ ]}
+ ]
+};
+const TX_REFERENCE_ONLY=new Set(['account-research','salesforce-upgrade','exchange-button']);
+const TX_SALE_AUDIT_GUIDES=new Set(['new-line','add-line','upgrade','salesforce-upgrade','aia-c','df']);
+const TX_SALE_AUDIT=[
+ 'Confirm why the customer came in and what would resolve the visit.',
+ 'Check the current plan, lines and monthly charges when the customer already has service.',
+ 'Review installment balances, promotions and eligible options as they apply.',
+ 'Explain the real before-and-after cost, including optional add-ons and taxes.',
+ 'Check relevant eligibility and device condition before making a promotional promise.',
+ 'Make sure the original issue has a clear resolution or next step.'
+];
+const TX_WHY={
+ 'upgrade': 'Research the existing rate plan, installments and phone condition before quoting: eligibility to upgrade and eligibility for promotional credits are different.',
+ 'new-line':'A new customer needs the correct rate plan, device and account setup before activation. Optional products must remain optional.',
+ 'returns':'Serialized devices may affect activation, financing, upgrade eligibility and promotions. Non-serialized accessories require receipt/SKU handling instead.',
+ 'sim':'An incorrect line, IMEI or ICCID can disconnect the wrong device; verify each identifier before submitting.',
+ 'aia-c':'A submitted Internet Air order is not necessarily active. Confirm the actual ACTIVE status in Salesforce.',
+ 'billpay':'Choosing the right billing account and obtaining one-time payment authorization prevents misapplied or duplicate payments.'
+};
+
+
+function txFlowSlug(path,index){return 'walkthrough--'+path+'--'+index}
+function txOverride(gid,pid,i,fallback){const saved=data.steps.find(s=>s.guide_id===gid&&s.slug===txFlowSlug(pid,i));if(!saved)return fallback;
+ try{const v=JSON.parse(saved.body);if(v.v!==1||!Array.isArray(v.actions))return fallback;return [saved.title,v.actions,v.help||'',!!v.review,v.why||''];}catch{return fallback;}}
+function txGuidePaths(id){const existing=TX_EXTRA[id]||TX_GUIDES[id];if(existing)return existing.map(p=>({...p,steps:p.steps.map((x,i)=>txOverride(id,p.id,i,x))}));
+ const steps=guideSteps(id).filter(s=>!/^pending.review$/i.test(s.title)).map(s=>({dbStep:s}));
+ return [{id:'standard',name:'Step-by-step',caption:'Current reference instructions',steps:steps.length?steps:[['Not yet documented',['This procedure still requires a verified workflow.','Check CCKM / ask management before making account changes.'],'We will add exact screens when available.',true]]}];}
 function txPath(){const options=txGuidePaths(ui.guide);return options.find(p=>p.id===tx.path)||options[0];}
-function txReset(id){tx.guide=id;tx.path=txGuidePaths(id)[0].id;tx.step=0;tx.help=false;tx.done=false;tx.view='walkthrough';tx.refOrigin=null;}
-function txSingleStep(x){if(x.dbStep){const entries=instructionItems(x.dbStep.body),actions=entries.filter(z=>!z.nested).map(v=>v.text);return {title:x.dbStep.title,actions:actions.length?actions:[x.dbStep.body],help:entries.filter(z=>z.nested).map(z=>z.text).join(' '),review:/pending|needs review/i.test(x.dbStep.title+' '+x.dbStep.body)}}
- return {title:x[0],actions:x[1],help:x[2]||'',review:!!x[3]}}
+function txReset(id){tx.guide=id;tx.path=txGuidePaths(id)[0].id;tx.step=0;tx.help=false;tx.done=false;tx.view='walkthrough';tx.refOrigin=null;tx.checks=new Set();tx.auditChecks=new Set();}
+function txSingleStep(x){if(x.dbStep){const entries=instructionItems(x.dbStep.body);
+ const actions=entries.map(z=>(z.nested?'↳ ':'')+z.text);
+ return {title:x.dbStep.title,actions:actions.length?actions:[x.dbStep.body],help:'',why:'',review:/pending|needs review|awaiting|to confirm/i.test(x.dbStep.title+' '+x.dbStep.body)};}
+ return {title:x[0],actions:x[1],help:x[2]||'',review:!!x[3],why:x[4]||''};}
+function txCheckId(type,i){return [ui.guide,tx.path,tx.step,type,i].join('|')}
+function txAuditSection(){if(!TX_SALE_AUDIT_GUIDES.has(ui.guide)||tx.step!==0)return '';
+ return '<details class="tx-audit" open><summary>Before the sale · quick quote check <small>Reminder only — never graded</small></summary><div class="tx-audit-list">'+TX_SALE_AUDIT.map((line,i)=>'<label class="tx-audit-item"><input type="checkbox" data-tx-audit="'+i+'" '+(tx.auditChecks?.has(txCheckId('audit',i))?'checked':'')+'><span>'+esc(line)+'</span></label>').join('')+'</div><p class="tx-audit-foot">For a new account, review the relevant options rather than an existing bill. Continue whenever you are ready.</p></details>';}
 function txHome(){const query=ui.query.trim().toLowerCase();let featured=['new-line','add-line','upgrade','billpay','rate-changes','feature-changes','aia-c','df','returns','sim'];let icons={'new-line':'✳','add-line':'＋','upgrade':'↗','billpay':'$','rate-changes':'⇄','feature-changes':'⚙','aia-c':'◈','df':'▤','returns':'↩','sim':'▣','porting':'↔'};
- let gs=data.guides.filter(g=>[g.title,g.summary,...guideSteps(g.id).map(x=>x.title+' '+x.body)].join(' ').toLowerCase().includes(query));
- let search='<label class="tx-search"><span>⌕</span><input id="search" type="search" placeholder="Search a transaction, button or problem…" autocomplete="off" value="'+esc(ui.query)+'"><span class="tx-search-key">SEARCH</span></label>';
+ let gs=data.guides.filter(g=>!TX_REFERENCE_ONLY.has(g.id)&&[g.title,g.summary,...guideSteps(g.id).map(x=>x.title+' '+x.body)].join(' ').toLowerCase().includes(query));
+ let search=pbAiSearchBox();
  let cards=(xs)=>'<div class="tx-cards">'+xs.map(g=>'<button class="tx-card" data-guide="'+esc(g.id)+'"><span class="tx-card-icon">'+(icons[g.id]||'→')+'</span><span class="tx-card-body"><strong>'+esc(g.title.replace(' — Phone',''))+'</strong><small>'+esc(g.summary)+'</small></span><span class="tx-card-arrow">→</span></button>').join('')+'</div>';
  return '<div class="tx-home"><div class="tx-hero"><span class="tx-eyebrow">CINNAMINSON · FIELD EDITION</span><h1>The Playbook<span class="tx-title-dot">.</span></h1><p>What are we doing for the customer?</p>'+search+'</div>'+(query?'<section class="tx-home-section"><div class="tx-section-head"><h2>Search results</h2><small>'+gs.length+' found</small></div>'+cards(gs)+'</section>':'<section class="tx-home-section"><div class="tx-section-head"><h2>Start a transaction</h2><small>Choose one to begin</small></div>'+cards(featured.map(guide).filter(Boolean))+'</section><section class="tx-home-section"><div class="tx-section-head"><h2>All procedures</h2><small>By category</small></div><div class="tx-chapters">'+data.chapters.filter(c=>c.id!=='resources'&&c.visible).map(c=>'<button data-chapter="'+esc(c.id)+'" class="tx-chapter"><span>'+esc(c.icon)+'</span><strong>'+esc(c.title)+'</strong><small>'+data.guides.filter(g=>g.chapter_id===c.id).length+' guides</small><b>→</b></button>').join('')+'</div></section>')+'<div class="tx-home-footnote">Official CCKM terms take precedence for live offers. Your progress is temporary; no customer data is stored in the Playbook.</div></div>'}
-function txChapterPage(){const c=chapter(ui.chapter);if(!c)return txHome();let gs=data.guides.filter(g=>g.chapter_id===c.id);return '<div class="tx-home"><button class="tx-back" data-go="home">← Back to transactions</button><div class="tx-section-head tx-section-head-big"><div><div class="tx-eyebrow">TRANSACTION CATEGORY</div><h1>'+esc(c.title)+'</h1><p>'+esc(c.tagline)+'</p></div></div><div class="tx-cards">'+gs.map(g=>'<button class="tx-card" data-guide="'+esc(g.id)+'"><span class="tx-card-icon">→</span><span class="tx-card-body"><strong>'+esc(g.title)+'</strong><small>'+esc(g.summary)+'</small></span><span class="tx-card-arrow">→</span></button>').join('')+'</div></div>'}
-function txReader(){const g=guide(ui.guide);if(!g)return txHome();if(tx.guide!==g.id)txReset(g.id);const paths=txGuidePaths(g.id),path=txPath();const all=path.steps.map(txSingleStep),index=Math.max(0,Math.min(tx.step,Math.max(0,all.length-1))),s=all[index];if(!all.length&&tx.view!=='reference')return '<div class="tx-reader"><button class="tx-back" data-go="home">← All transactions</button><section class="tx-action-card"><h2>Steps not yet added</h2><p>This procedure has no saved walkthrough steps. Open Reference to check available material or ask a manager to complete the guide.</p><button class="tx-secondary" data-tx="view" data-value="reference">Open reference</button></section></div>';if(tx.view==='reference')return '<div class="tx-reference-top"><button data-tx="view" data-value="walkthrough">← Back to transaction</button><span>Reference · '+esc(g.title)+'</span></div>'+legacyReader();if(tx.done)return '<div class="tx-reader"><button class="tx-back" data-go="home">← All transactions</button><section class="tx-finished"><div class="tx-finished-icon">✓</div><p class="tx-eyebrow">GUIDE COMPLETE</p><h1>'+esc(g.title)+'</h1><p>You reached the end of the instructions. The customer transaction is only complete after ACC or OPUS confirms success. Review the receipt, activation, and any pending trade-in or pickup.</p><div class="tx-finish-actions"><button class="tx-primary" data-tx="restart">↻ Start again</button><button class="tx-secondary" data-go="home">All transactions</button></div></section></div>';
- const percent=all.length?Math.round((index+1)/all.length*100):100;
- const chooser=paths.length>1?'<div class="tx-path-box"><div class="tx-label">WHAT TYPE OF TRANSACTION?</div><div class="tx-path-pills">'+paths.map(p=>'<button data-tx="path" data-value="'+esc(p.id)+'" class="tx-path-pill '+(path.id===p.id?'active':'')+'">'+esc(p.name)+'</button>').join('')+'</div><p>'+esc(path.caption||'')+'</p></div>':'';
- const notes=ann(g.id,guideSteps(g.id)[Math.min(index,Math.max(0,guideSteps(g.id).length-1))]?.slug||'').filter(x=>x.kind==='note');
- return '<div class="tx-reader"><div class="tx-reader-top"><button class="tx-back" data-go="home">← All transactions</button><div class="tx-reader-top-actions"><button class="tx-outline" data-tx="view" data-value="reference">▤ Reference & notes</button><button class="tx-outline" data-action="print">⎙ Print reference</button></div></div><div class="tx-reader-header"><span class="tx-eyebrow">'+esc(chapter(g.chapter_id)?.title||'PROCEDURES')+' / WORKFLOW</span><h1>'+esc(g.title)+'</h1><p>'+esc(g.summary)+'</p></div>'+chooser+(g.status==='pending'?'<div class="tx-status-warning">This guide is pending review. Verify incomplete actions before processing.</div>':'')+'<section class="tx-action-card"><div class="tx-progress-head"><span>STEP '+(index+1)+' OF '+all.length+'</span><span>'+percent+'%</span></div><div class="tx-progress-track"><div style="width:'+percent+'%"></div></div><h2>'+esc(s.title)+'</h2><div class="tx-actions">'+s.actions.map((a,i)=>'<div class="tx-action-row"><span class="tx-action-num">'+String(i+1).padStart(2,'0')+'</span><p>'+esc(a)+'</p></div>').join('')+'</div>'+(s.review?'<div class="tx-status-warning">Part of this step is awaiting a confirmed live walkthrough.</div>':'')+(s.help?'<div class="tx-quick-tip"><span class="tx-quick-tip-title">⚑ &nbsp; Important at this step</span><p>'+esc(s.help)+'</p></div>':'')+'<div class="tx-nav"><button class="tx-secondary" data-tx="prev" '+(index===0?'disabled':'')+'>← Back</button><button class="tx-primary" data-tx="next">'+(index===all.length-1?'Finish walkthrough ✓':'Next step →')+'</button></div></section><div class="tx-step-map"><strong>Jump to a step</strong><div>'+all.map((v,i)=>'<button data-tx="jump" data-value="'+i+'" title="'+esc(v.title)+'" class="'+(i===index?'current':'')+'">'+(i+1)+'</button>').join('')+'</div></div><div class="tx-lower-reference"><span>Need more detail?</span><button data-tx="view" data-value="reference">Open the complete reference, notes & annotations →</button></div></div>'}
+function txChapterPage(){const c=chapter(ui.chapter);if(!c)return txHome();let gs=data.guides.filter(g=>g.chapter_id===c.id&&!TX_REFERENCE_ONLY.has(g.id));return '<div class="tx-home"><button class="tx-back" data-go="home">← Back to transactions</button><div class="tx-section-head tx-section-head-big"><div><div class="tx-eyebrow">TRANSACTION CATEGORY</div><h1>'+esc(c.title)+'</h1><p>'+esc(c.tagline)+'</p></div></div><div class="tx-cards">'+gs.map(g=>'<button class="tx-card" data-guide="'+esc(g.id)+'"><span class="tx-card-icon">→</span><span class="tx-card-body"><strong>'+esc(g.title)+'</strong><small>'+esc(g.summary)+'</small></span><span class="tx-card-arrow">→</span></button>').join('')+'</div></div>'}
+function txReader(){
+ const g=guide(ui.guide);if(!g)return txHome();if(tx.guide!==g.id)txReset(g.id);
+ const paths=txGuidePaths(g.id),path=txPath(),all=path.steps.map(txSingleStep);
+ const index=Math.max(0,Math.min(tx.step,Math.max(0,all.length-1))),step=all[index];
+ if(tx.view==='reference')return '<div class="tx-reference-top"><button data-tx="view" data-value="walkthrough">← Back to walkthrough</button><span>Reference & team notes · '+esc(g.title)+'</span></div>'+legacyReader();
+ if(tx.done)return '<div class="tx-reader"><button class="tx-back" data-go="home">← All transactions</button><section class="tx-finished"><div class="tx-finished-icon">✓</div><p class="tx-eyebrow">END OF WALKTHROUGH</p><h1>'+esc(g.title)+'</h1><p>You reached the last instruction. Confirm the actual ACC / OPUS transaction, receipt and any required device, pickup or trade-in follow-up. No checklist score is saved.</p><div class="tx-finish-actions"><button class="tx-primary" data-tx="restart">↻ Start again</button><button class="tx-secondary" data-go="home">All transactions</button></div></section></div>';
+ if(!all.length)return '<div class="tx-reader"><button class="tx-back" data-go="home">← All transactions</button><section class="tx-action-card"><h2>Steps not yet added</h2><p>Check Reference for current information; avoid guessing the transaction.</p><button class="tx-secondary" data-tx="view" data-value="reference">Open reference</button></section></div>';
+ const percent=Math.round((index+1)/all.length*100);
+ const groups=[...new Set(paths.map(p=>p.group).filter(Boolean))];
+ const choices=paths.length>1?(groups.length>1?'<div class="tx-group-choices"><div class="tx-label">FIRST · WHAT TYPE OF ITEM?</div>'+groups.map(gr=>'<button class="tx-group-pill '+(gr===path.group?'active':'')+'" data-tx="group" data-value="'+esc(gr)+'">'+esc(gr)+'</button>').join('')+'</div>':'')+'<div class="tx-path-box"><div class="tx-label">'+(groups.length?'CHOOSE THE TRANSACTION':'WHICH TRANSACTION ARE YOU DOING?')+'</div><div class="tx-path-pills">'+paths.filter(p=>!groups.length||p.group===path.group).map(p=>'<button data-tx="path" data-value="'+esc(p.id)+'" class="tx-path-pill '+(path.id===p.id?'active':'')+'">'+esc(p.name)+'</button>').join('')+'</div><p>'+esc(path.caption||'')+'</p></div>':'';
+ const actions=step.actions.map((a,i)=>{const key=txCheckId('action',i),checked=tx.checks?.has(key);return '<label class="tx-action-row '+(checked?'is-checked':'')+'"><input class="tx-action-check" type="checkbox" data-tx-check="'+i+'" '+(checked?'checked':'')+' aria-label="Mark step action reviewed"><span class="tx-action-num">'+String(i+1).padStart(2,'0')+'</span><span class="tx-action-text">'+esc(a)+'</span></label>'}).join('');
+ const why=step.why||(index===0?TX_WHY[ui.guide]:'')||'';
+ const notes=(step.help?'<div class="tx-quick-tip"><span class="tx-quick-tip-title">⚑ &nbsp; Important at this step</span><p>'+esc(step.help)+'</p></div>':'')+(why?'<details class="tx-why"><summary>Why this matters</summary><p>'+esc(why)+'</p></details>':'');
+ const status=(step.review?'<div class="tx-status-warning">Some buttons or requirements in this step still need confirmation in a live demo. Use the actual ACC / OPUS prompts and CCKM.</div>':'')+(g.status==='pending'?'<div class="tx-status-warning">This guide is still marked pending. Confirm current instructions before performing account changes.</div>':'');
+ const edit=admin()?'<button class="tx-outline" data-tx="edit-step" title="Edit this guided step in Supabase">✎ Edit this step</button>':'';
+ return '<div class="tx-reader"><div class="tx-reader-top"><button class="tx-back" data-go="home">← All transactions</button><div class="tx-reader-top-actions"><button class="tx-outline" data-tx="view" data-value="reference">▤ Reference & notes</button>'+edit+'<button class="tx-outline" data-action="print">⎙ Print reference</button></div></div><div class="tx-reader-header"><span class="tx-eyebrow">'+esc(chapter(g.chapter_id)?.title||'PROCEDURES')+' / WALKTHROUGH</span><h1>'+esc(g.title)+'</h1><p>'+esc(g.summary)+'</p></div>'+choices+txAuditSection()+status+pbAiTeamNotes(g.id)+'<section class="tx-action-card"><div class="tx-progress-head"><span>STEP '+(index+1)+' OF '+all.length+'</span><span>WALKTHROUGH · '+percent+'%</span></div><div class="tx-progress-track"><div style="width:'+percent+'%"></div></div><h2>'+esc(step.title)+'</h2><p class="tx-reminder">Tap any square to mark an action reviewed. You can always move forward; this is not a test.</p><div class="tx-actions">'+actions+'</div>'+notes+'<div class="tx-nav"><button class="tx-secondary" data-tx="prev" '+(index===0?'disabled':'')+'>← Back</button><button class="tx-primary" data-tx="next">'+(index===all.length-1?'Finish walkthrough →':'Next step →')+'</button></div></section><div class="tx-step-map"><strong>Jump to a step</strong><div>'+all.map((v,i)=>'<button data-tx="jump" data-value="'+i+'" title="'+esc(v.title)+'" class="'+(i===index?'current':'')+'">'+(i+1)+'</button>').join('')+'</div></div><div class="tx-lower-reference"><span>Looking for background or team notes?</span><button data-tx="view" data-value="reference">Open reference & annotations →</button></div></div>';
+}
+function txResources(){const original=resourcesPage();const extras=data.guides.filter(g=>TX_REFERENCE_ONLY.has(g.id));return original+'<section class="tx-more-reference"><h2>Additional reference procedures</h2><p>These remain available as background material rather than duplicate transactions.</p><div>'+extras.map(g=>'<button data-tx="refguide" data-value="'+esc(g.id)+'">'+esc(g.title)+' <span>→</span></button>').join('')+'</div></section>';}
 function txShell(body){const chapters=data.chapters.filter(c=>c.visible&&c.id!=='resources');const nav='<aside class="tx-sidebar"><div class="tx-sidebar-logo">THE <b>PLAYBOOK</b><small>GLOBAL WIRELESS · CINNAMINSON</small></div><div class="tx-sidebar-kicker">WORKSPACE</div><button class="tx-side-link" data-go="home">⌂ &nbsp; Start a transaction</button><button class="tx-side-link" data-go="resources">↗ &nbsp; Reference library</button><div class="tx-sidebar-kicker">BROWSE</div>'+chapters.map(c=>'<button class="tx-side-link" data-chapter="'+esc(c.id)+'">'+esc(c.icon)+' &nbsp; '+esc(c.title)+'</button>').join('')+'<div class="tx-sidebar-foot">Store-specific transaction walkthroughs.<br>Always verify current CCKM terms.</div></aside>';
  const current=ui.page==='reader'?guide(ui.guide)?.title:ui.page==='chapter'?chapter(ui.chapter)?.title:ui.page==='resources'?'Reference Library':'Transactions';const navmobile='<nav class="tx-mobile-nav"><button data-go="home">⌂<small>Home</small></button><button data-chapter="wireless">↗<small>Wireless</small></button><button data-go="resources">▤<small>Reference</small></button><button data-action="account">◉<small>Account</small></button></nav>';
  return '<div class="tx-shell">'+nav+'<main class="tx-main"><header class="tx-topbar"><span>THE PLAYBOOK <span class="tx-crumb-divider">/</span> '+esc(current||'Home')+'</span><button class="tx-account" data-action="account">◉ &nbsp; '+esc(me.display_name)+'</button></header><div class="tx-workspace">'+body+'</div><footer class="tx-footer">THE PLAYBOOK · CINNAMINSON &nbsp; • &nbsp; Verify changing promotions in CCKM</footer></main></div>'+navmobile;
 }
 // New transaction UI, with the full original notebook available under Reference.
-function render(){if(!authed()){$('#app').innerHTML=loginPage();$('#modal-root').innerHTML='';return;}let body=ui.page==='home'?txHome():ui.page==='chapter'?txChapterPage():ui.page==='reader'?txReader():resourcesPage();$('#app').innerHTML=txShell(body);renderModal();initCanvas();}
+function render(){if(!authed()){$('#app').innerHTML=loginPage();$('#modal-root').innerHTML='';return;}let body=ui.page==='home'?txHome():ui.page==='chapter'?txChapterPage():ui.page==='reader'?txReader():txResources();$('#app').innerHTML=txShell(body);renderModal();initCanvas();}
 // A separate capture-phase handler; other original controls keep working unchanged.
-document.addEventListener('click',e=>{const b=e.target.closest('[data-tx]');if(!b)return;e.preventDefault();e.stopImmediatePropagation();if(!authed())return;const op=b.dataset.tx,val=b.dataset.value;if(op==='path'){tx.path=val;tx.step=0;tx.help=false;tx.done=false;tx.view='walkthrough';tx.refOrigin=null;}else if(op==='next'){let steps=txPath().steps;if(tx.step>=steps.length-1)tx.done=true;else tx.step++;tx.help=false;}else if(op==='prev'){tx.step=Math.max(0,tx.step-1);tx.help=false;}else if(op==='help')tx.help=!tx.help;else if(op==='view'){if(val==='reference'&&ui.guide==='upgrade'){let id={'shared':'shared-upgrade','acc-store':'salesforce-upgrade','acc-ship':'salesforce-upgrade'}[tx.path];if(id&&guide(id)){tx.refOrigin={guide:ui.guide,path:tx.path,step:tx.step};ui.guide=id;tx.guide=id;}}else if(val==='walkthrough'&&tx.refOrigin){ui.guide=tx.refOrigin.guide;tx.guide=ui.guide;tx.path=tx.refOrigin.path;tx.step=tx.refOrigin.step;tx.refOrigin=null;}tx.view=val;tx.help=false;ui.markup=false;}else if(op==='restart'){txReset(ui.guide);}else if(op==='jump'){tx.step=Number(val)||0;tx.help=false;}render();if(op!=='help')window.scrollTo(0,0);},true);
+document.addEventListener('change',e=>{
+ if(!authed())return;
+ if(e.target.matches('[data-tx-check]')){const key=txCheckId('action',e.target.dataset.txCheck);if(e.target.checked)tx.checks.add(key);else tx.checks.delete(key);e.target.closest('.tx-action-row')?.classList.toggle('is-checked',e.target.checked);}
+ if(e.target.matches('[data-tx-audit]')){const key=txCheckId('audit',e.target.dataset.txAudit);if(e.target.checked)tx.auditChecks.add(key);else tx.auditChecks.delete(key);}
+},true);
+document.addEventListener('click',async e=>{
+ const b=e.target.closest('[data-tx]');if(!b)return;e.preventDefault();e.stopImmediatePropagation();if(!authed())return;
+ const op=b.dataset.tx,val=b.dataset.value;
+ if(op==='refguide'){navigate('reader',val);tx.view='reference';render();window.scrollTo(0,0);return;}
+ if(op==='path'){tx.path=val;tx.step=0;tx.done=false;tx.view='walkthrough';}
+ else if(op==='group'){const p=txGuidePaths(ui.guide).find(p=>p.group===val);if(p){tx.path=p.id;tx.step=0;tx.done=false;tx.view='walkthrough';}}
+ else if(op==='next'){let len=txPath().steps.length;if(tx.step>=len-1)tx.done=true;else tx.step++;}
+ else if(op==='prev')tx.step=Math.max(0,tx.step-1);
+ else if(op==='view'){tx.view=val;ui.markup=false;}
+ else if(op==='restart')txReset(ui.guide);
+ else if(op==='jump')tx.step=Math.max(0,Math.min(txPath().steps.length-1,Number(val)||0));
+ else if(op==='edit-step'){if(!admin())return;const step=txSingleStep(txPath().steps[tx.step]);showModal('txedit',{step,path:tx.path,index:tx.step});return;}
+ else if(op==='save-tx-step'){if(!admin())return;await saveTxOfficial();return;}
+ render();window.scrollTo(0,0);
+},true);
+async function saveTxOfficial(){
+ const title=$('#tx-title')?.value.trim(),actions=String($('#tx-actions')?.value||'').split(/\r?\n/).map(x=>x.trim()).filter(Boolean),help=$('#tx-tip')?.value.trim()||'',why=$('#tx-why')?.value.trim()||'',review=!!$('#tx-unverified')?.checked;
+ if(!title||!actions.length){notify('A title and at least one action are required');return;}
+ const path=modal.path,index=modal.index,slug=txFlowSlug(path,index),old=data.steps.find(s=>s.guide_id===ui.guide&&s.slug===slug);
+ const vals={guide_id:ui.guide,slug,title,body:JSON.stringify({v:1,actions,help,why,review}),display_order:500+index,default_open:false,updated_at:new Date().toISOString()};
+ const {error}=await sb.from('pb_steps').upsert(vals,{onConflict:'guide_id,slug'});if(error){msgError(error);return;}
+ const {error:revError}=await sb.from('pb_revisions').insert({guide_id:ui.guide,step_slug:slug,actor_id:me.id,action:old?'edit_walkthrough_step':'add_walkthrough_step',previous_value:old||null,next_value:vals});
+ if(revError)notify('Walkthrough saved; revision history needs checking.');
+ closeModal();await loadData();notify('Guided step saved to Supabase');
+}
+
 
 (function startPlaybook(){
  const start=document.getElementById('startup-message');
@@ -417,4 +593,56 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-tx]');if(!
  lib.onerror=()=>{clearTimeout(watchdog);fail('The login library could not be downloaded.')};
  document.head.appendChild(lib);
 })();
+// Playbook AI search: authenticated Q&A, grounded links and confirmation-only team notes.
+let pbAi={question:'',loading:false,error:'',result:null,saved:false};
+function pbAiSearchBox(){
+ const r=pbAi.result;
+ const refs=r?.sources?.length?'<div class="pb-ai-refs"><strong>Source · Open in Playbook</strong>'+r.sources.map(s=>'<button type="button" data-pb-ai-ref="'+esc(s.guide_id)+'" data-pb-ai-step="'+esc(s.step_slug)+'">▤ '+esc(s.guide_title)+' → '+esc(s.title)+' <span>↗</span></button>').join('')+'</div>':'';
+ const steps=Array.isArray(r?.steps)&&r.steps.length?'<div class="pb-ai-steps">'+r.steps.map((x,i)=>'<div><b>'+String(i+1).padStart(2,'0')+'</b><span>'+esc(x)+'</span></div>').join('')+'</div>':'';
+ const p=r?.proposal;
+ const proposal=p&&!pbAi.saved?'<section class="pb-ai-proposal"><small>PROPOSED TEAM NOTE · REVIEW BEFORE SAVING</small><strong>'+esc(p.guide_title)+'</strong><p>'+esc(p.text)+'</p><div class="pb-ai-proposal-bottom"><span>This adds a shared note. It does not change official steps.</span><button type="button" data-pb-ai="save-note">Save team note</button></div></section>':pbAi.saved?'<div class="pb-ai-saved">✓ Team note saved to the Playbook.</div>':'';
+ const gtt=r?.gtt?.url&&/^https:\/\//.test(r.gtt.url)?'<a class="pb-ai-gtt" href="'+esc(r.gtt.url)+'" target="_blank" rel="noopener noreferrer">↗ Open Global Trade Tool for live trade values and promotions</a>':'';
+ const output=(pbAi.loading?'<div class="pb-ai-status" role="status">Finding the right steps in the Playbook…</div>':'')+(pbAi.error?'<div class="pb-ai-error" role="alert">'+esc(pbAi.error)+'</div>':'')+(r?'<section class="pb-ai-answer" aria-label="Playbook AI answer"><div class="pb-ai-answer-head"><span>✦ PLAYBOOK ASSISTANT</span><small>Linked Playbook references</small></div><p>'+esc(r.answer)+'</p>'+steps+refs+proposal+gtt+'</section>':'');
+ return '<div class="pb-ai-panel"><form id="pb-ai-form" class="pb-ai-form"><span aria-hidden="true">✦</span><input id="pb-ai-question" aria-label="Ask the Playbook assistant" autocomplete="off" maxlength="1000" placeholder="Ask how to finish a DF upgrade, find a button, or add a team note…" value="'+esc(pbAi.question)+'" required><button type="submit" '+(pbAi.loading?'disabled':'')+'>'+(pbAi.loading?'Checking…':'Ask AI →')+'</button></form><p class="pb-ai-disclaimer">Ask about procedures, not customers. Never enter customer names, phone numbers, account or payment details.</p>'+output+'</div>';
+}
+function pbAiTeamNotes(id){
+ const notes=data.annotations.filter(a=>a.guide_id===id&&a.kind==='note'&&!a.needs_review).slice(-4).reverse();
+ if(!notes.length)return '';
+ return '<details class="pb-ai-team-notes"><summary>🗒 Team notes <span>('+notes.length+')</span></summary><div>'+notes.map(n=>'<div class="pb-ai-team-note"><p>'+esc(n.note_text||'')+'</p><small>Attached to '+esc(data.steps.find(s=>s.guide_id===id&&s.slug===n.step_slug)?.title||'this guide')+'</small></div>').join('')+'</div></details>';
+}
+async function pbAiAsk(){
+ if(pbAi.loading||!authed())return;
+ const question=pbAi.question.trim();if(question.length<3){pbAi.error='Enter a question to ask the Playbook.';render();return}
+ pbAi.loading=true;pbAi.error='';pbAi.result=null;pbAi.saved=false;render();
+ try{
+  const {data:reply,error}=await sb.functions.invoke('playbook-ai',{body:{question}});
+  if(error){let msg=error.message||'The assistant is unavailable.';try{if(error.context&&typeof error.context.json==='function'){const detail=await error.context.json();msg=detail.error||msg}}catch{}throw Error(msg)}
+  if(reply?.error)throw Error(reply.error);
+  if(!reply||typeof reply.answer!=='string')throw Error('The AI response was incomplete. Try again.');
+  pbAi.result=reply;
+ }catch(e){pbAi.error=e?.message||'The assistant could not answer right now. Use the regular guide.'}
+ finally{pbAi.loading=false;render();}
+}
+async function pbAiSaveNote(){
+ const p=pbAi.result?.proposal;if(!p||pbAi.saved||!authed())return;
+ const valid=data.steps.some(s=>s.guide_id===p.guide_id&&s.slug===p.step_slug),g=guide(p.guide_id);
+ if(!valid||!g){pbAi.error='That reference has changed. Ask the assistant again.';render();return}
+ const text=String(p.text||'').trim();if(!text||text.length>450)return;
+ if(!window.confirm('Save this shared note under '+g.title+'?\n\n'+text))return;
+ const result=await sb.from('pb_annotations').insert({guide_id:p.guide_id,step_slug:p.step_slug,author_id:me.id,kind:'note',note_text:text,color:'#f5d94b'});
+ if(result.error){pbAi.error=result.error.message;render();return}
+ pbAi.saved=true;await loadData();notify('Shared Playbook note saved');
+}
+document.addEventListener('submit',e=>{if(e.target?.id==='pb-ai-form'){e.preventDefault();e.stopImmediatePropagation();pbAi.question=String(document.querySelector('#pb-ai-question')?.value||'').slice(0,1000);void pbAiAsk()}},true);
+document.addEventListener('input',e=>{if(e.target?.id==='pb-ai-question')pbAi.question=String(e.target.value||'').slice(0,1000)},true);
+document.addEventListener('click',e=>{
+ const btn=e.target.closest('button[data-pb-ai],button[data-pb-ai-ref]');if(!btn)return;
+ e.preventDefault();e.stopImmediatePropagation();if(!authed())return;
+ if(btn.dataset.pbAi==='save-note'){void pbAiSaveNote();return}
+ const id=btn.dataset.pbAiRef,slug=btn.dataset.pbAiStep;
+ if(!guide(id))return;
+ navigate('reader',id);tx.view='reference';ui.open[openKey(id,slug)]=true;render();
+ setTimeout(()=>{const el=[...document.querySelectorAll('[data-step]')].find(x=>x.dataset.step===slug);el?.scrollIntoView({behavior:'smooth',block:'center'})},80);
+},true);
+
 </script></body></html>
