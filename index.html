@@ -83,7 +83,37 @@ body{background:var(--tx-base);color:var(--tx-ink);font-family:ui-sans-serif,-ap
 
 /* Playbook AI · note-first grounded procedure search */
 .pb-ai-panel{margin-top:17px}.pb-ai-form{display:flex;align-items:center;gap:10px;padding:9px 9px 9px 14px;border:1px solid #b5c7d0;border-radius:13px;background:#fff;box-shadow:0 5px 0 rgba(28,58,84,.05)}.pb-ai-form>span{font-size:23px;color:#49798b}.pb-ai-form input{flex:1;min-width:0;border:0;outline:none;background:transparent;font:500 14px/1.5 system-ui;color:#253f50;padding:5px 0}.pb-ai-form button{border:0;border-radius:9px;background:#233f55;color:#fff;font-size:12px;font-weight:800;padding:13px 17px;white-space:nowrap;cursor:pointer}.pb-ai-form button:disabled{opacity:.6;cursor:wait}.pb-ai-disclaimer{font-size:11px!important;color:#7a8082!important;margin:7px 3px 13px!important}.pb-ai-status,.pb-ai-error{padding:13px 15px;border-radius:10px;font-size:13px;background:#eff2f2;color:#375d72}.pb-ai-error{background:#fff0e8;color:#99473e}.pb-ai-answer{border:1px solid #c8d4d6;border-radius:13px;background:#fcfff9;padding:18px 20px;margin:11px 0 23px;text-align:left;box-shadow:0 6px 22px rgba(47,72,76,.06)}.pb-ai-answer-head{display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid #dde4e0;padding-bottom:9px}.pb-ai-answer-head span{font-size:10px;color:#4b7880;font-weight:850;letter-spacing:.09em}.pb-ai-answer-head small{font-size:10px;color:#718189}.pb-ai-answer>p{font-size:14px!important;line-height:1.65!important;color:#263b44!important;white-space:pre-wrap;margin:15px 0!important}.pb-ai-steps{display:flex;flex-direction:column;gap:9px;margin:10px 0}.pb-ai-steps>div{display:flex;gap:11px;font-size:13px;line-height:1.5;color:#344550}.pb-ai-steps b{color:#a16d5a;font-size:11px;font-family:monospace}.pb-ai-refs{margin-top:15px;padding-top:13px;border-top:1px dashed #d6dfde;display:flex;flex-direction:column;gap:7px}.pb-ai-refs>strong{font-size:11px;letter-spacing:.07em;color:#54727e;text-transform:uppercase}.pb-ai-refs button{border:1px solid #d0d9d6;background:#f7f8f4;color:#2c4d63;text-align:left;padding:10px 11px;font-size:12px;font-weight:750;border-radius:8px}.pb-ai-refs button span{float:right}.pb-ai-proposal{margin-top:14px;border:1px solid #e6c88d;background:#fff9e7;border-radius:10px;padding:13px 14px}.pb-ai-proposal small{display:block;font-size:10px;color:#8d693a;font-weight:850;letter-spacing:.05em}.pb-ai-proposal strong{display:block;margin:7px 0;font-size:13px;color:#594d32}.pb-ai-proposal p{white-space:pre-wrap;font-size:13px;color:#3d4739;line-height:1.6}.pb-ai-proposal-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.pb-ai-proposal-bottom>span{font-size:11px;color:#756a58;flex:1}.pb-ai-proposal-bottom button{border:none;background:#385e72;color:#fff;padding:10px 12px;border-radius:8px;font-size:12px;font-weight:750}.pb-ai-saved{background:#e5f1e3;padding:10px;border-radius:8px;font-size:12px;color:#3a674b;margin-top:12px}.pb-ai-gtt{display:inline-block;font-size:12px!important;padding-top:14px}.pb-ai-team-notes{border:1px solid #e3d5ab;background:#fff9e9;border-radius:11px;padding:14px 17px;margin:15px 0}.pb-ai-team-notes>summary{font-size:13px;color:#706042;font-weight:780;cursor:pointer}.pb-ai-team-notes>summary span{color:#86795e}.pb-ai-team-note{padding:10px 0;border-top:1px solid #e5d7b5;margin-top:9px}.pb-ai-team-note p{font-size:13px;color:#45463b;line-height:1.6;white-space:pre-wrap;margin:0}.pb-ai-team-note small{color:#817658;font-size:10px}.pb-ai-form:focus-within{outline:2px solid #83aeba;outline-offset:2px}
+/* Conversation-first Playbook AI. Only in-memory state, no customer records stored. */
+.pb-ai-chat-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px 2px 13px}.pb-ai-chat-bar strong{font-size:13px;color:#324e61}.pb-ai-chat-bar small{display:block;font-size:11px;color:#71818a;margin-top:3px}.pb-ai-chat-reset{border:1px solid #d2d9db;background:#f9faf8;color:#425b68;font-size:12px;font-weight:700;padding:9px 12px;border-radius:9px;cursor:pointer;white-space:nowrap}.pb-ai-chat-reset:hover{background:#eef4f2}.pb-ai-chat-thread{display:flex;flex-direction:column;gap:12px;max-height:560px;overflow-y:auto;overscroll-behavior:contain;padding:4px 5px 14px 2px;margin:6px 0 14px;scrollbar-color:#b8c9c7 transparent}.pb-ai-chat-line{max-width:min(100%,700px)}.pb-ai-chat-line.is-user{align-self:flex-end;max-width:90%}.pb-ai-chat-user{border-radius:16px 16px 5px 16px;background:#244d65;color:#fff;padding:12px 15px;font-size:13px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}.pb-ai-chat-line.is-assistant{align-self:stretch}.pb-ai-chat-line .pb-ai-answer{margin:0;border-radius:5px 16px 16px 16px;box-shadow:0 4px 10px rgba(36,69,76,.045);padding:14px 16px}.pb-ai-chat-line .pb-ai-answer-head{padding-bottom:7px}.pb-ai-chat-line .pb-ai-answer>p{margin:11px 0!important}.pb-ai-chat-thread .pb-ai-status{max-width:90%;align-self:flex-start}.pb-ai-form{position:relative}.pb-ai-chat-hint{font-size:11px;color:#73878a;margin:0 2px 10px;line-height:1.5}.pb-ai-followup-chip{display:inline-block;margin-top:8px;font-size:11px;color:#57727d}.pb-ai-chat-line.is-user .pb-ai-followup-chip{display:none}@media(max-width:600px){.pb-ai-chat-thread{max-height:440px}.pb-ai-chat-line.is-user{max-width:96%}.pb-ai-chat-line .pb-ai-answer{padding:13px 13px}.pb-ai-chat-bar strong{font-size:12px}.pb-ai-chat-reset{padding:8px 9px}}
+
 @media(max-width:580px){.pb-ai-form{flex-wrap:wrap;padding:11px}.pb-ai-form>span{font-size:20px}.pb-ai-form input{flex:1 1 calc(100% - 40px);font-size:14px}.pb-ai-form button{width:100%}.pb-ai-answer{padding:15px 13px}.pb-ai-answer-head{align-items:flex-start;flex-direction:column}}
+
+/* One notebook per transaction · editorial view and inline editing */
+.nb-page{max-width:1050px;margin:auto;color:#283b4b}.nb-paper{position:relative;min-height:560px;background:#fffcf4;border:1px solid #dfd5bf;border-radius:12px;box-shadow:0 13px 42px #34271713;padding:35px 39px 65px 62px;background-image:linear-gradient(90deg,transparent 40px,#df928459 41px,transparent 42px),repeating-linear-gradient(0deg,transparent 0,transparent 38px,#a0c1dc1f 39px,transparent 40px);}
+.nb-paper:before{content:'';position:absolute;top:24px;bottom:30px;left:16px;width:15px;background:radial-gradient(circle,#d6cbb4 5px,transparent 5.5px) 0 0 /15px 65px repeat-y;pointer-events:none}
+.nb-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 30px}.nb-toolbar-actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center}.nb-btn{background:#fffdfa;border:1px solid #d8ccba;border-radius:8px;color:#344e64;padding:9px 12px;font-size:12px;font-weight:750;cursor:pointer}.nb-btn:hover{background:white;border-color:#acb9bd}.nb-btn.primary{background:#263e55;color:white;border-color:#263e55}.nb-btn.warn{border-color:#c4816b;color:#a35242}.nb-btn:disabled{opacity:.55;cursor:not-allowed}.nb-header{border-bottom:2px solid #d9cbb4;padding-bottom:23px;margin-bottom:23px}.nb-overline{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:#ae5e50;font-weight:800}.nb-header h1{font:700 clamp(32px,4.5vw,48px)/1.12 Georgia,serif;margin:11px 0 12px;letter-spacing:-1px}.nb-header p{max-width:720px;line-height:1.58;color:#63707b;margin:0;font-size:15px}.nb-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.nb-meta span{border:1px solid #dcd3bf;padding:5px 9px;border-radius:20px;background:#fcf9ec;font-size:11px;color:#64727b;font-weight:700}
+.nb-subnav{display:flex;gap:8px;flex-wrap:wrap;margin:19px 0 24px}.nb-subnav button{border:1px solid #cfd7da;background:#f0f6f6;border-radius:20px;padding:8px 11px;color:#385c75;font-size:12px;font-weight:700;cursor:pointer}.nb-subnav button:hover{background:white}.nb-section{position:relative;margin:15px 0 20px;padding:19px 5px 20px;border-bottom:1px dashed #d5c9b3;scroll-margin-top:25px}.nb-section-head{display:flex;gap:14px;align-items:flex-start}.nb-section-number{flex:0 0 33px;font:700 20px/1.2 Georgia,serif;color:#bb685c}.nb-section-title{flex:1;min-width:0;font:700 21px/1.3 Georgia,serif;color:#2b4052;margin:0}.nb-section-description{font-size:12px;color:#81909a;margin:5px 0 0}.nb-actions{display:flex;flex-direction:column;gap:0;margin:13px 0 4px 47px}.nb-action{display:flex;align-items:flex-start;gap:13px;padding:10px 9px 10px 0;min-height:42px;cursor:pointer;border-bottom:1px solid #dfd7c345}.nb-action:last-child{border-bottom:0}.nb-action input{margin:3px 0 0;width:19px;height:19px;accent-color:#375c75;flex:0 0 19px;cursor:pointer}.nb-action span{line-height:1.64;font-size:14px;overflow-wrap:anywhere}.nb-action.checked span{color:#778680}.nb-action .nb-subheading{font-weight:800;color:#9a594d;margin-top:2px}.nb-section-warning{background:#fff1df;border-left:3px solid #b9824b;margin:15px 0 12px 46px;padding:10px 12px;border-radius:0 7px 7px 0;font-size:13px;line-height:1.55;color:#75533d}.nb-why{margin:13px 0 0 46px;background:#f4f0e5;border-radius:8px;padding:9px 12px;font-size:13px;color:#536878}.nb-why summary{cursor:pointer;font-weight:800}.nb-why p{line-height:1.7;margin:8px 0 0}.nb-edit-tools{display:flex;gap:6px;flex-wrap:wrap;margin:11px 0 0 46px}.nb-edit-tools button{font-size:11px;border:1px solid #d0c6b3;border-radius:7px;background:white;padding:7px 9px;color:#526375;font-weight:700;cursor:pointer}.nb-insert{display:block;margin:15px auto;color:#57738a;border:1px dashed #acbcc3;background:#eef4f2;border-radius:8px;padding:9px 14px;font-size:12px;font-weight:800;cursor:pointer}.nb-variation-group{padding:18px 0 4px;margin-top:24px}.nb-variation-heading{font:700 24px Georgia,serif;margin:4px 0}.nb-variation-sub{color:#63727c;font-size:13px;line-height:1.6;margin:5px 0 15px}.nb-branch{background:#fffdf8;border:1px solid #ddd2be;border-radius:9px;margin:10px 0;overflow:hidden;scroll-margin-top:22px}.nb-branch[open]{box-shadow:0 5px 14px #293e5210}.nb-branch>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px 17px}.nb-branch>summary::-webkit-details-marker{display:none}.nb-branch>summary strong{font:700 17px Georgia,serif;flex:1}.nb-branch>summary span{font-size:12px;color:#7e8990}.nb-branch>summary:after{content:'+';font-size:20px;color:#61798b}.nb-branch[open]>summary:after{content:'−'}.nb-branch-inner{border-top:1px solid #e4dccc;padding:7px 20px 17px}.nb-branch .nb-actions,.nb-branch .nb-why,.nb-branch .nb-section-warning,.nb-branch .nb-edit-tools{margin-left:0}.nb-branch .nb-action{padding-block:9px}.nb-branch .nb-action span{font-size:13px}.nb-review{font-size:11px;color:#9a624b;background:#f7e7d5;border:1px solid #e5c9ad;padding:4px 8px;border-radius:9px;font-weight:700;white-space:nowrap}.nb-bottom{margin-top:25px;padding-top:19px;border-top:2px solid #ded4bf}.nb-bottom>details{margin:10px 0;border:1px solid #ded4c2;border-radius:9px;background:#fbf9f0}.nb-bottom>details>summary{padding:15px;cursor:pointer;font-size:13px;font-weight:800}.nb-bottom>details>div{padding:4px 16px 18px;font-size:13px}.nb-edit-banner{border:1px solid #b8d0c4;background:#eaf2e9;border-radius:9px;padding:13px 16px;font-size:13px;margin-bottom:14px;color:#416452;line-height:1.6}.nb-edit-note{font-size:12px;color:#526778;padding:9px 0}.nb-note{margin:10px 0;padding:10px 12px;border-left:3px solid #d4ad48;background:#fff8e5;border-radius:3px;font-size:13px;line-height:1.6}.nb-note small{font-size:10px;color:#726f67;display:block;margin-bottom:4px}.nb-ai-wrap{padding:0 0 10px}.nb-ai-wrap .pb-ai-panel{margin-top:5px}.nb-mini-notes{margin:13px 0}.nb-empty{font-size:13px;color:#737e85;margin:16px 0}.nb-modal-backdrop{position:fixed;inset:0;background:#172936a8;z-index:901;display:grid;place-items:center;padding:15px}.nb-modal{background:#fffdf6;border-radius:12px;width:100%;max-width:690px;max-height:90vh;overflow:auto;box-shadow:0 30px 80px #14233775;padding:24px}.nb-modal h2{font:700 25px Georgia,serif;margin:0 0 9px}.nb-modal p{font-size:12px;color:#6b7679;line-height:1.6}.nb-modal label{display:block;font-size:12px;font-weight:800;margin:16px 0 6px}.nb-modal input:not([type=checkbox]),.nb-modal textarea,.nb-modal select{width:100%;padding:11px;font-size:14px;border-radius:7px;border:1px solid #cfc8b9;background:white;color:#263947}.nb-modal textarea{min-height:100px;line-height:1.5;resize:vertical}.nb-modal textarea.actions{min-height:180px}.nb-modal-foot{display:flex;justify-content:flex-end;gap:9px;margin-top:20px;flex-wrap:wrap}.nb-edit-mini{display:flex;align-items:center;gap:8px;margin:11px 0}.nb-note-add{border:0;background:transparent;color:#5b7390;text-decoration:underline;font-size:12px;padding:4px;cursor:pointer}.nb-notes-label{font:700 11px ui-monospace,monospace;letter-spacing:.07em;text-transform:uppercase;color:#8f8b80}.nb-tmp{font-size:11px;color:#806754;background:#fff0d7;padding:9px;border-radius:6px;margin:10px 0}
+@media(max-width:760px){.nb-paper{padding:25px 17px 45px 34px}.nb-paper:before{left:6px;width:10px}.nb-toolbar{margin-bottom:20px}.nb-header h1{font-size:35px}.nb-section{padding:15px 0}.nb-section-title{font-size:19px}.nb-section-head{gap:8px}.nb-section-number{flex-basis:25px;font-size:16px}.nb-actions{margin-left:33px}.nb-section-warning,.nb-why,.nb-edit-tools{margin-left:33px}.nb-action span{font-size:13px}.nb-action{gap:9px}.nb-branch>summary{padding:14px 10px}.nb-branch-inner{padding:8px 13px}.nb-edit-tools{gap:6px}.nb-subnav button{font-size:11px}}
+@media print{.tx-sidebar,.tx-topbar,.tx-mobile-nav,.tx-footer,.nb-toolbar,.nb-subnav,.nb-edit-tools,.nb-note-add,.nb-insert,.nb-ai-wrap,.nb-why>summary{display:none!important}.nb-paper{border:0;box-shadow:none;margin:0;padding:20px 25px;background:#fff}.nb-branch{break-inside:avoid}.nb-branch:not([open])>.nb-branch-inner{display:block!important}.nb-why{padding:0;border:0}}
+
+.nb-presale{border:1px solid #d3d6c4;background:#f3f5ec;border-radius:10px;margin:13px 0 22px;overflow:hidden}.nb-presale>summary{padding:12px 15px;cursor:pointer;font-size:13px;font-weight:750;color:#507165}.nb-presale>div{padding:7px 16px 15px}.nb-presale .nb-action{min-height:35px;padding:7px 0}.nb-presale .nb-action span{font-size:13px}
+
+/* Personal notebook tools: the guide is always read-only until a drawing tool is selected. */
+.nb-paper{isolation:isolate}
+.nb-personal-layer{position:absolute;inset:0;width:100%;height:100%;z-index:12;pointer-events:none;touch-action:auto}
+.nb-personal-layer.is-active{pointer-events:auto;touch-action:none;cursor:crosshair}
+.nb-personal-dock{position:fixed;z-index:420;bottom:18px;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;padding:10px 13px;background:#fffdf6f5;box-shadow:0 8px 34px #16283a30;border:1px solid #d8cdb9;border-radius:17px;max-width:calc(100vw - 22px);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.nb-personal-dock button{border:1px solid #d9d4c8;border-radius:9px;background:#fffdfa;color:#33475b;font-size:12px;font-weight:750;min-height:37px;padding:7px 10px;white-space:nowrap}
+.nb-personal-dock button.active{background:#28455e;color:white;border-color:#28455e}
+.nb-personal-dock button:disabled{opacity:.36}
+.nb-personal-colors{display:flex;align-items:center;gap:5px;padding-left:6px;border-left:1px solid #d8d4ca}
+.nb-personal-dock .nb-personal-color{width:25px;height:25px;min-height:25px;padding:0;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #b6b5ac}
+.nb-personal-dock .nb-personal-color.active{box-shadow:0 0 0 2px #253d56}
+.nb-personal-text{position:absolute;z-index:11;max-width:240px;min-width:65px;white-space:pre-wrap;overflow-wrap:anywhere;font:700 17px/1.35 "Segoe Print","Comic Sans MS",cursive;pointer-events:none}
+.nb-paper{padding-bottom:110px}
+@media(max-width:760px){.nb-personal-dock{bottom:calc(67px + env(safe-area-inset-bottom));padding:8px;gap:5px;border-radius:12px;width:calc(100vw - 18px)}.nb-personal-dock button{font-size:11px;min-height:34px;padding:6px 8px}.nb-personal-colors{gap:5px}.nb-personal-dock .nb-personal-color{width:22px;height:22px;min-height:22px}.tx-workspace{padding-bottom:155px}}
+@media(max-width:440px){.nb-personal-dock{gap:5px}.nb-personal-colors{flex-basis:100%;border-left:0;border-top:1px solid #e3ded3;padding:6px 0 0;justify-content:center}.nb-personal-dock button{flex:1}}
+@media print{.nb-personal-dock,.nb-personal-layer,.nb-personal-text{display:none!important}}
 </style></head><body><div id="app"><div class="login-wrap"><section class="login-card"><div class="eyebrow">GLOBAL WIRELESS · CINNAMINSON</div><h1>The Playbook</h1><p id="startup-message">Opening the store notebook…</p></section></div></div><div id="print-root" class="print-only"></div><div id="modal-root"></div><div id="toast-root" class="toast" style="display:none"></div><script>// Cinnaminson Playbook: authenticated data is kept in Supabase, not in this public source.
 const SUPABASE_URL='https://uwomiirfvllcafijmkmk.supabase.co';
 const PUBLIC_KEY='sb_publishable_UMb8Nb5DG0w1dv9h5W5-2Q_0PinuBV4';
@@ -102,7 +132,7 @@ let selection=null,stroke=null;
 const admin=()=>me?.role==='admin';
 const guide=id=>data.guides.find(x=>x.id===id);
 const chapter=id=>data.chapters.find(x=>x.id===id);
-const guideSteps=id=>data.steps.filter(x=>x.guide_id===id&&!String(x.slug||'').startsWith('walkthrough--')).sort((a,b)=>a.display_order-b.display_order);
+const guideSteps=id=>data.steps.filter(x=>x.guide_id===id&&!String(x.slug||'').startsWith('walkthrough--')&&x.slug!=='notebook--v1').sort((a,b)=>a.display_order-b.display_order);
 const ann=(g,s)=>data.annotations.filter(x=>x.guide_id===g&&x.step_slug===s&&!x.needs_review);
 const openKey=(g,s)=>g+'/'+s;
 const opened=(g,s)=>ui.open[openKey(g,typeof s==='string'?s:s.slug)]===true;
@@ -518,7 +548,7 @@ function txHome(){const query=ui.query.trim().toLowerCase();let featured=['new-l
  let gs=data.guides.filter(g=>!TX_REFERENCE_ONLY.has(g.id)&&[g.title,g.summary,...guideSteps(g.id).map(x=>x.title+' '+x.body)].join(' ').toLowerCase().includes(query));
  let search=pbAiSearchBox();
  let cards=(xs)=>'<div class="tx-cards">'+xs.map(g=>'<button class="tx-card" data-guide="'+esc(g.id)+'"><span class="tx-card-icon">'+(icons[g.id]||'→')+'</span><span class="tx-card-body"><strong>'+esc(g.title.replace(' — Phone',''))+'</strong><small>'+esc(g.summary)+'</small></span><span class="tx-card-arrow">→</span></button>').join('')+'</div>';
- return '<div class="tx-home"><div class="tx-hero"><span class="tx-eyebrow">CINNAMINSON · FIELD EDITION</span><h1>The Playbook<span class="tx-title-dot">.</span></h1><p>What are we doing for the customer?</p>'+search+'</div>'+(query?'<section class="tx-home-section"><div class="tx-section-head"><h2>Search results</h2><small>'+gs.length+' found</small></div>'+cards(gs)+'</section>':'<section class="tx-home-section"><div class="tx-section-head"><h2>Start a transaction</h2><small>Choose one to begin</small></div>'+cards(featured.map(guide).filter(Boolean))+'</section><section class="tx-home-section"><div class="tx-section-head"><h2>All procedures</h2><small>By category</small></div><div class="tx-chapters">'+data.chapters.filter(c=>c.id!=='resources'&&c.visible).map(c=>'<button data-chapter="'+esc(c.id)+'" class="tx-chapter"><span>'+esc(c.icon)+'</span><strong>'+esc(c.title)+'</strong><small>'+data.guides.filter(g=>g.chapter_id===c.id).length+' guides</small><b>→</b></button>').join('')+'</div></section>')+'<div class="tx-home-footnote">Official CCKM terms take precedence for live offers. Your progress is temporary; no customer data is stored in the Playbook.</div></div>'}
+ return '<div class="tx-home"><div class="tx-hero"><span class="tx-eyebrow">CINNAMINSON · FIELD EDITION</span><h1>The Playbook<span class="tx-title-dot">.</span></h1><p>What are we doing for the customer?</p>'+search+'</div>'+(query?'<section class="tx-home-section"><div class="tx-section-head"><h2>Search results</h2><small>'+gs.length+' found</small></div>'+cards(gs)+'</section>':'<section class="tx-home-section"><div class="tx-section-head"><h2>Open a procedure</h2><small>Choose one to begin</small></div>'+cards(featured.map(guide).filter(Boolean))+'</section><section class="tx-home-section"><div class="tx-section-head"><h2>All procedures</h2><small>By category</small></div><div class="tx-chapters">'+data.chapters.filter(c=>c.id!=='resources'&&c.visible).map(c=>'<button data-chapter="'+esc(c.id)+'" class="tx-chapter"><span>'+esc(c.icon)+'</span><strong>'+esc(c.title)+'</strong><small>'+data.guides.filter(g=>g.chapter_id===c.id).length+' guides</small><b>→</b></button>').join('')+'</div></section>')+'<div class="tx-home-footnote">Official CCKM terms take precedence for live offers. Your progress is temporary; no customer data is stored in the Playbook.</div></div>'}
 function txChapterPage(){const c=chapter(ui.chapter);if(!c)return txHome();let gs=data.guides.filter(g=>g.chapter_id===c.id&&!TX_REFERENCE_ONLY.has(g.id));return '<div class="tx-home"><button class="tx-back" data-go="home">← Back to transactions</button><div class="tx-section-head tx-section-head-big"><div><div class="tx-eyebrow">TRANSACTION CATEGORY</div><h1>'+esc(c.title)+'</h1><p>'+esc(c.tagline)+'</p></div></div><div class="tx-cards">'+gs.map(g=>'<button class="tx-card" data-guide="'+esc(g.id)+'"><span class="tx-card-icon">→</span><span class="tx-card-body"><strong>'+esc(g.title)+'</strong><small>'+esc(g.summary)+'</small></span><span class="tx-card-arrow">→</span></button>').join('')+'</div></div>'}
 function txReader(){
  const g=guide(ui.guide);if(!g)return txHome();if(tx.guide!==g.id)txReset(g.id);
@@ -538,7 +568,7 @@ function txReader(){
  return '<div class="tx-reader"><div class="tx-reader-top"><button class="tx-back" data-go="home">← All transactions</button><div class="tx-reader-top-actions"><button class="tx-outline" data-tx="view" data-value="reference">▤ Reference & notes</button>'+edit+'<button class="tx-outline" data-action="print">⎙ Print reference</button></div></div><div class="tx-reader-header"><span class="tx-eyebrow">'+esc(chapter(g.chapter_id)?.title||'PROCEDURES')+' / WALKTHROUGH</span><h1>'+esc(g.title)+'</h1><p>'+esc(g.summary)+'</p></div>'+choices+txAuditSection()+status+pbAiTeamNotes(g.id)+'<section class="tx-action-card"><div class="tx-progress-head"><span>STEP '+(index+1)+' OF '+all.length+'</span><span>WALKTHROUGH · '+percent+'%</span></div><div class="tx-progress-track"><div style="width:'+percent+'%"></div></div><h2>'+esc(step.title)+'</h2><p class="tx-reminder">Tap any square to mark an action reviewed. You can always move forward; this is not a test.</p><div class="tx-actions">'+actions+'</div>'+notes+'<div class="tx-nav"><button class="tx-secondary" data-tx="prev" '+(index===0?'disabled':'')+'>← Back</button><button class="tx-primary" data-tx="next">'+(index===all.length-1?'Finish walkthrough →':'Next step →')+'</button></div></section><div class="tx-step-map"><strong>Jump to a step</strong><div>'+all.map((v,i)=>'<button data-tx="jump" data-value="'+i+'" title="'+esc(v.title)+'" class="'+(i===index?'current':'')+'">'+(i+1)+'</button>').join('')+'</div></div><div class="tx-lower-reference"><span>Looking for background or team notes?</span><button data-tx="view" data-value="reference">Open reference & annotations →</button></div></div>';
 }
 function txResources(){const original=resourcesPage();const extras=data.guides.filter(g=>TX_REFERENCE_ONLY.has(g.id));return original+'<section class="tx-more-reference"><h2>Additional reference procedures</h2><p>These remain available as background material rather than duplicate transactions.</p><div>'+extras.map(g=>'<button data-tx="refguide" data-value="'+esc(g.id)+'">'+esc(g.title)+' <span>→</span></button>').join('')+'</div></section>';}
-function txShell(body){const chapters=data.chapters.filter(c=>c.visible&&c.id!=='resources');const nav='<aside class="tx-sidebar"><div class="tx-sidebar-logo">THE <b>PLAYBOOK</b><small>GLOBAL WIRELESS · CINNAMINSON</small></div><div class="tx-sidebar-kicker">WORKSPACE</div><button class="tx-side-link" data-go="home">⌂ &nbsp; Start a transaction</button><button class="tx-side-link" data-go="resources">↗ &nbsp; Reference library</button><div class="tx-sidebar-kicker">BROWSE</div>'+chapters.map(c=>'<button class="tx-side-link" data-chapter="'+esc(c.id)+'">'+esc(c.icon)+' &nbsp; '+esc(c.title)+'</button>').join('')+'<div class="tx-sidebar-foot">Store-specific transaction walkthroughs.<br>Always verify current CCKM terms.</div></aside>';
+function txShell(body){const chapters=data.chapters.filter(c=>c.visible&&c.id!=='resources');const nav='<aside class="tx-sidebar"><div class="tx-sidebar-logo">THE <b>PLAYBOOK</b><small>GLOBAL WIRELESS · CINNAMINSON</small></div><div class="tx-sidebar-kicker">WORKSPACE</div><button class="tx-side-link" data-go="home">⌂ &nbsp; Open notebook</button><button class="tx-side-link" data-go="resources">↗ &nbsp; Reference library</button><div class="tx-sidebar-kicker">BROWSE</div>'+chapters.map(c=>'<button class="tx-side-link" data-chapter="'+esc(c.id)+'">'+esc(c.icon)+' &nbsp; '+esc(c.title)+'</button>').join('')+'<div class="tx-sidebar-foot">Store-specific transaction walkthroughs.<br>Always verify current CCKM terms.</div></aside>';
  const current=ui.page==='reader'?guide(ui.guide)?.title:ui.page==='chapter'?chapter(ui.chapter)?.title:ui.page==='resources'?'Reference Library':'Transactions';const navmobile='<nav class="tx-mobile-nav"><button data-go="home">⌂<small>Home</small></button><button data-chapter="wireless">↗<small>Wireless</small></button><button data-go="resources">▤<small>Reference</small></button><button data-action="account">◉<small>Account</small></button></nav>';
  return '<div class="tx-shell">'+nav+'<main class="tx-main"><header class="tx-topbar"><span>THE PLAYBOOK <span class="tx-crumb-divider">/</span> '+esc(current||'Home')+'</span><button class="tx-account" data-action="account">◉ &nbsp; '+esc(me.display_name)+'</button></header><div class="tx-workspace">'+body+'</div><footer class="tx-footer">THE PLAYBOOK · CINNAMINSON &nbsp; • &nbsp; Verify changing promotions in CCKM</footer></main></div>'+navmobile;
 }
@@ -577,6 +607,106 @@ async function saveTxOfficial(){
 }
 
 
+
+// One editable Notebook per procedure; legacy transaction screens retained only in source code for migration.
+const NB_SLUG='notebook--v1';
+let nb={guide:'',edit:false,dirty:false,draft:null,checks:new Set(),aiOpen:false,modal:null};
+const nbClone=x=>JSON.parse(JSON.stringify(x));
+function nbId(){return 's'+Math.random().toString(36).slice(2,10)}
+function nbBaseDoc(id){
+ const old=TX_EXTRA[id]||TX_GUIDES[id];
+ if(!old){const entries=guideSteps(id).filter(x=>x.slug!==NB_SLUG&&!x.slug.startsWith('walkthrough--')&&!/pending review/i.test(x.title));return {v:2,sections:entries.length?entries.map((x,i)=>({id:'source-'+i,type:'main',title:x.title,actions:instructionItems(x.body).map(t=>t.text),warning:'',why:'',review:/pending|needs review|awaiting/i.test(x.title+' '+x.body)})):[{id:'pending',type:'main',title:'Procedure awaiting demonstration',actions:['Check current CCKM guidance or contact management before processing this transaction.'],warning:'Exact steps have not been verified.',why:'',review:true}],updated:'reference'};}
+ const sections=[];
+ old.forEach((p,i)=>{
+   if(i===0){for(let j=0;j<p.steps.length;j++){let x=txSingleStep(txOverride(id,p.id,j,p.steps[j]));sections.push({id:'base-'+p.id+'-'+j,type:'main',title:x.title,actions:x.actions,warning:x.help||'',why:x.why||(j===0?(TX_WHY[id]||''):''),review:!!x.review});}}
+   else{
+     const actions=[];let caution=[];let review=false;
+     for(let j=0;j<p.steps.length;j++){const x=txSingleStep(txOverride(id,p.id,j,p.steps[j]));actions.push('§ '+x.title);actions.push(...x.actions);if(x.help)caution.push(x.help);review=review||x.review;}
+     sections.push({id:'variant-'+p.id,type:'variation',title:p.name,group:p.group||'',caption:p.caption||'',actions,warning:[...new Set(caution)].join(' '),why:'',review});
+   }
+ });
+ return {v:2,sections,updated:'based-on-existing-guides'};
+}
+function nbPersisted(id){const rec=data.steps.find(s=>s.guide_id===id&&s.slug===NB_SLUG);if(!rec)return null;try{const obj=JSON.parse(rec.body);if(obj.v===2&&Array.isArray(obj.sections))return obj}catch{}return null;}
+function nbDoc(id){if(nb.guide!==id){nb={guide:id,edit:false,dirty:false,draft:null,checks:new Set(),aiOpen:false,modal:null};}return nb.edit&&nb.draft?nb.draft:(nbPersisted(id)||nbBaseDoc(id));}
+function nbSafe(s){return String(s||'').slice(0,12000)}
+function nbActionHtml(line,index,sec){if(line.startsWith('§ '))return '<div class="nb-action" style="border:0;padding-top:15px"><span class="nb-subheading">'+esc(line.slice(2))+'</span></div>';
+ const k=sec.id+'|'+index,checked=nb.checks.has(k);return '<label class="nb-action '+(checked?'checked':'')+'"><input type="checkbox" data-nb-check="'+esc(k)+'" '+(checked?'checked':'')+'><span>'+linkify(line)+'</span></label>';}
+function nbVisibleNotes(gid,id){return data.annotations.filter(a=>a.guide_id===gid&&a.step_slug==='notebook--'+id&&a.kind==='note').map(n=>'<div class="nb-note"><small>'+esc(memberName(n.author_id))+' · '+dateLabel(n.created_at)+'</small>'+esc(n.note_text||'')+'</div>').join('')}
+function nbSection(s,i,variant){const editing=nb.edit;
+ const tools=editing?'<div class="nb-edit-tools"><button data-nb="edit-section" data-id="'+esc(s.id)+'">✎ Edit</button><button data-nb="move-up" data-id="'+esc(s.id)+'">↑ Move</button><button data-nb="move-down" data-id="'+esc(s.id)+'">↓ Move</button><button data-nb="insert" data-after="'+esc(s.id)+'">＋ Below</button><button data-nb="delete" data-id="'+esc(s.id)+'">Remove</button></div>':'';
+ const actions=(s.actions||[]).map((a,k)=>nbActionHtml(String(a),k,s)).join('')||'<div class="nb-empty">No actions added yet.</div>';
+ const warning=s.warning?'<div class="nb-section-warning"><strong>Note:</strong> '+esc(s.warning)+'</div>':'';
+ const why=s.why?'<details class="nb-why"><summary>Why? · Show explanation</summary><p>'+esc(s.why)+'</p></details>':'';
+ const notes=nbVisibleNotes(ui.guide,s.id);
+ const addnote='<div class="nb-edit-mini"><button class="nb-note-add" data-nb="note" data-id="'+esc(s.id)+'">＋ Team note</button></div>';
+ if(variant){const inner='<div class="nb-branch-inner">'+(s.caption?'<p class="nb-section-description">'+esc(s.caption)+'</p>':'')+'<div class="nb-actions">'+actions+'</div>'+warning+why+notes+addnote+tools+'</div>';
+ return '<details id="nb-'+esc(s.id)+'" class="nb-branch" '+(nb.edit?'open':'')+'><summary><strong>'+esc(s.title)+'</strong>'+(s.review?'<span class="nb-review">Verify details</span>':'')+'</summary>'+inner+'</details>';}
+ return '<section id="nb-'+esc(s.id)+'" class="nb-section"><div class="nb-section-head"><span class="nb-section-number">'+String(i+1).padStart(2,'0')+'</span><div style="flex:1"><h2 class="nb-section-title">'+esc(s.title)+'</h2></div>'+(s.review?'<span class="nb-review">Verify details</span>':'')+'</div><div class="nb-actions">'+actions+'</div>'+warning+why+notes+addnote+tools+'</section>';
+}
+function nbReader(){
+ const g=guide(ui.guide);if(!g)return txHome();const doc=nbDoc(g.id),secs=doc.sections||[],main=secs.filter(s=>s.type!=='variation'),vars=secs.filter(s=>s.type==='variation');
+ const edition=nb.edit?'<button class="nb-btn primary" data-nb="save" '+(nb.dirty?'':'disabled')+'>✓ Save changes'+(nb.dirty?' ●':'')+'</button><button class="nb-btn" data-nb="discard">Cancel editing</button>':admin()?'<button class="nb-btn primary" data-nb="edit">✎ Edit notebook</button>':'';
+ const top='<div class="nb-toolbar"><button class="nb-btn" data-go="home">← All procedures</button><div class="nb-toolbar-actions">'+edition+'<button class="nb-btn" data-nb="ai">✦ Ask AI</button><button class="nb-btn" data-nb="print">⎙ Print</button></div></div>';
+ const headings=main.map((s,i)=>'<button data-nb="jump" data-id="'+esc(s.id)+'">'+(i+1)+'. '+esc(s.title)+'</button>').join('')+vars.map(s=>'<button data-nb="jump" data-id="'+esc(s.id)+'">'+esc(s.title)+'</button>').join('');
+ const actions=main.map((s,i)=>nbSection(s,i,false)).join('');
+ const variants=vars.length?'<div class="nb-variation-group"><span class="nb-overline">WHEN THE TRANSACTION IS DIFFERENT</span><h2 class="nb-variation-heading">Options & exceptions</h2><p class="nb-variation-sub">BYOD, shipped devices, special returns and other paths live here—not in separate versions of this guide. Open only what applies.</p>'+vars.map((s,i)=>nbSection(s,i,true)).join('')+'</div>':'';
+ const savehint=nb.edit?'<div class="nb-edit-banner"><strong>Edit mode.</strong> Change wording, add steps anywhere, reorder, or create an expandable option. Nothing is published until you select <strong>Save changes</strong>. All changes become official for the team.</div>':'';
+ const add=nb.edit?'<button class="nb-insert" data-nb="insert" data-after="' +esc(main.at(-1)?.id||'')+'">＋ Add a main step here</button><button class="nb-insert" data-nb="insert" data-type="variation" data-after="'+esc(secs.at(-1)?.id||'')+'">＋ Add an expandable option</button>':'';
+ const extraNotes=data.annotations.filter(a=>a.guide_id===g.id&&a.kind==='note'&&!String(a.step_slug).startsWith('notebook--'));
+ const originalNotes=extraNotes.length?'<details><summary>Existing team notes ('+extraNotes.length+')</summary><div>'+extraNotes.map(n=>'<div class="nb-note"><small>'+esc(memberName(n.author_id))+' · '+esc(data.steps.find(s=>s.guide_id===g.id&&s.slug===n.step_slug)?.title||'Guide note')+'</small>'+esc(n.note_text||'')+'</div>').join('')+'</div></details>':'';
+ const reference='<div class="nb-bottom">'+originalNotes+'<details><summary>▤ Full source instructions & policy reference</summary><div>These original procedure sections remain saved in Supabase. You can still use the detailed reference and annotations when needed. <button class="nb-btn" data-nb="source">Open full reference</button></div></details></div>';
+ const audit=TX_SALE_AUDIT_GUIDES.has(g.id)?'<details class="nb-presale"><summary>☑ Before the sale · optional reminders</summary><div>'+TX_SALE_AUDIT.map((v,i)=>nbActionHtml(v,i,{id:'audit-'+g.id})).join('')+'</div></details>':'';
+ const ai=nb.aiOpen?'<div class="nb-ai-wrap">'+pbAiSearchBox()+'</div>':'';
+ if(tx.view==='reference')return '<div class="tx-reference-top"><button data-nb="back">← Notebook</button><span>Original reference · '+esc(g.title)+'</span></div>'+legacyReader();
+ return '<div class="nb-page">'+top+ai+'<article class="nb-paper">'+savehint+'<header class="nb-header"><span class="nb-overline">THE PLAYBOOK · '+esc(chapter(g.chapter_id)?.title||'PROCEDURES')+'</span><h1>'+esc(g.title)+'</h1><p>'+esc(g.summary||'Step-by-step notebook instructions')+'</p><div class="nb-meta"><span>One working guide</span><span>'+main.length+' main steps</span>'+(vars.length?'<span>'+vars.length+' expandable options</span>':'')+(g.status==='pending'?'<span>Pending verification</span>':'')+'</div></header><div class="nb-subnav">'+headings+'</div>'+audit+actions+add+variants+reference+'<canvas class="nb-personal-layer" aria-label="Personal notebook markings"></canvas></article>'+nbPersonalToolbar()+'</div>';
+}
+// Keep existing rendering, login, AI conversation, reference markup, and manager controls.
+txReader=nbReader;
+const nbOriginalRenderModal=renderModal;
+renderModal=function(){if(!modal||!['nbedit','nbnote'].includes(modal.type))return nbOriginalRenderModal();
+ const root=$('#modal-root');if(modal.type==='nbnote'){
+ root.innerHTML='<div class="nb-modal-backdrop"><div class="nb-modal" role="dialog" aria-modal="true"><h2>Team note</h2><p>Attach a note to this part of the notebook. It will be visible to the entire team; it will not change official instructions.</p><label>Reminder or explanation</label><textarea id="nb-note-content" maxlength="2000" placeholder="Double-check which phone number gets the new device..."></textarea><div class="nb-modal-foot"><button class="nb-btn" data-nb="cancel-modal">Cancel</button><button class="nb-btn primary" data-nb="save-note">Save team note</button></div></div></div>';return;}
+ const s=modal.section||{},type=s.type||modal.newType||'main';
+ root.innerHTML='<div class="nb-modal-backdrop"><div class="nb-modal" role="dialog" aria-modal="true"><h2>'+(modal.new?'Add notebook step':'Edit notebook step')+'</h2><p>Write the button-click instructions first. Put additional context in “Why?” or a warning. Each line is an individual action.</p><label>Step name</label><input id="nb-title" value="'+esc(s.title||'')+'" maxlength="130"><label>Kind of section</label><select id="nb-type"><option value="main" '+(type==='main'?'selected':'')+'>Main procedure step (visible)</option><option value="variation" '+(type==='variation'?'selected':'')+'>Expandable option / exception</option></select><label>What to click · one action per line</label><textarea id="nb-actions" class="actions" placeholder="In OPUS open Customer Summary&#10;Select Reversal near Upgrade&#10;Tap Reverse Upgrade">'+esc((s.actions||[]).join('\n'))+'</textarea><label>Short warning (stays visible)</label><textarea id="nb-warning" placeholder="Only proceed after verifying the correct line or eligibility…">'+esc(s.warning||'')+'</textarea><label>Why? (expandable explanation)</label><textarea id="nb-why" placeholder="Optional background that helps explain the process…">'+esc(s.why||'')+'</textarea><label>Small subtitle (optional)</label><input id="nb-caption" value="'+esc(s.caption||'')+'"><label class="radio-line"><input id="nb-review" type="checkbox" '+(s.review?'checked':'')+'> Needs verification in a live demo</label><div class="nb-modal-foot"><button class="nb-btn" data-nb="cancel-modal">Cancel</button><button class="nb-btn primary" data-nb="commit-section">'+(modal.new?'Add to notebook':'Apply changes')+'</button></div></div></div>';
+};
+function nbMarkChanged(){nb.dirty=true;render();}
+async function nbSave(){if(!admin()||!nb.edit||!nb.draft||!nb.dirty)return;
+ const g=ui.guide,existing=data.steps.find(s=>s.guide_id===g&&s.slug===NB_SLUG),vals={guide_id:g,slug:NB_SLUG,title:'Unified editable notebook',body:JSON.stringify(nb.draft),display_order:700,default_open:false,updated_at:new Date().toISOString()};
+ const {error}=await sb.from('pb_steps').upsert(vals,{onConflict:'guide_id,slug'});if(error){msgError(error);return;}
+ const {error:revError}=await sb.from('pb_revisions').insert({guide_id:g,step_slug:NB_SLUG,actor_id:me.id,action:existing?'update_notebook':'create_notebook',previous_value:existing||null,next_value:vals});
+ nb.edit=false;nb.draft=null;nb.dirty=false;await loadData();if(revError)notify('Saved, but revision history needs review.');else notify('Notebook saved to Supabase');}
+function nbHandle(id,after,type){const ix=nb.draft.sections.findIndex(x=>x.id===after);const s={id:nbId(),type:type||'main',title:'',actions:[],warning:'',why:'',review:false,caption:''};modal={type:'nbedit',section:s,new:true,insertAt:ix<0?nb.draft.sections.length:ix+1};renderModal();}
+document.addEventListener('change',e=>{if(e.target?.matches('[data-nb-check]')){const k=e.target.dataset.nbCheck;if(e.target.checked)nb.checks.add(k);else nb.checks.delete(k);e.target.closest('.nb-action')?.classList.toggle('checked',e.target.checked);}},true);
+document.addEventListener('click',async e=>{
+ const b=e.target.closest('[data-nb]');if(!b||!authed())return;e.preventDefault();e.stopImmediatePropagation();const op=b.dataset.nb,id=b.dataset.id;
+ if(op==='ai'){nb.aiOpen=!nb.aiOpen;render();return}
+ if(op==='print'){window.print();return}
+ if(op==='source'){tx.view='reference';render();window.scrollTo(0,0);return}
+ if(op==='back'){tx.view='walkthrough';render();window.scrollTo(0,0);return}
+ if(op==='jump'){const el=document.getElementById('nb-'+id);if(el?.tagName==='DETAILS')el.open=true;el?.scrollIntoView({behavior:'smooth',block:'start'});return}
+ if(op==='edit'){if(!admin())return;nb.edit=true;nb.dirty=false;nb.draft=nbClone(nbDoc(ui.guide));render();return}
+ if(op==='discard'){if(nb.dirty&&!window.confirm('Discard unpublished notebook edits?'))return;nb.edit=false;nb.dirty=false;nb.draft=null;render();return}
+ if(op==='save'){await nbSave();return}
+ if(op==='cancel-modal'){closeModal();return}
+ if(op==='edit-section'){const sec=nb.draft?.sections.find(x=>x.id===id);if(!sec)return;modal={type:'nbedit',section:nbClone(sec),new:false};renderModal();return}
+ if(op==='insert'){if(!nb.edit||!admin())return;nbHandle(null,b.dataset.after,b.dataset.type);return}
+ if(op==='commit-section'){
+  const title=$('#nb-title')?.value.trim(),type=$('#nb-type')?.value,actions=$('#nb-actions')?.value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean)||[],warning=$('#nb-warning')?.value.trim()||'',why=$('#nb-why')?.value.trim()||'',caption=$('#nb-caption')?.value.trim()||'',review=!!$('#nb-review')?.checked;
+  if(!title||!actions.length){notify('Enter a step name and at least one action.');return}
+  const sec={...modal.section,title,type,actions,warning,why,caption,review};
+  if(modal.new)nb.draft.sections.splice(modal.insertAt,0,sec);else{const i=nb.draft.sections.findIndex(x=>x.id===sec.id);if(i>=0)nb.draft.sections[i]=sec}
+  modal=null;nbMarkChanged();return;
+ }
+ if(op==='move-up'||op==='move-down'){let list=nb.draft?.sections,i=list?.findIndex(x=>x.id===id),j=i+(op==='move-up'?-1:1);if(i<0||j<0||j>=list.length)return;[list[i],list[j]]=[list[j],list[i]];nbMarkChanged();return}
+ if(op==='delete'){if(!nb.edit||!admin())return;if(!window.confirm('Remove this notebook section when you save?'))return;nb.draft.sections=nb.draft.sections.filter(x=>x.id!==id);nbMarkChanged();return}
+ if(op==='note'){modal={type:'nbnote',sectionId:id};renderModal();return}
+ if(op==='save-note'){
+  const message=$('#nb-note-content')?.value.trim();if(!message)return;const slug='notebook--'+modal.sectionId;
+  const {error}=await sb.from('pb_annotations').insert({guide_id:ui.guide,step_slug:slug,author_id:me.id,kind:'note',note_text:message,color:'#f5d94b'});if(error){msgError(error);return}closeModal();await loadData();notify('Shared team note added');return;
+ }
+},true);
+
 (function startPlaybook(){
  const start=document.getElementById('startup-message');
  const lib=document.createElement('script');
@@ -593,18 +723,23 @@ async function saveTxOfficial(){
  lib.onerror=()=>{clearTimeout(watchdog);fail('The login library could not be downloaded.')};
  document.head.appendChild(lib);
 })();
-// Playbook AI search: authenticated Q&A, grounded links and confirmation-only team notes.
-let pbAi={question:'',loading:false,error:'',result:null,saved:false};
-function pbAiSearchBox(){
- const r=pbAi.result;
+// Playbook AI conversation: keep short-lived context in this open tab only.
+let pbAi={question:'',loading:false,error:'',messages:[],busyNote:-1};
+function pbAiResultHtml(r,index){
  const refs=r?.sources?.length?'<div class="pb-ai-refs"><strong>Source · Open in Playbook</strong>'+r.sources.map(s=>'<button type="button" data-pb-ai-ref="'+esc(s.guide_id)+'" data-pb-ai-step="'+esc(s.step_slug)+'">▤ '+esc(s.guide_title)+' → '+esc(s.title)+' <span>↗</span></button>').join('')+'</div>':'';
  const steps=Array.isArray(r?.steps)&&r.steps.length?'<div class="pb-ai-steps">'+r.steps.map((x,i)=>'<div><b>'+String(i+1).padStart(2,'0')+'</b><span>'+esc(x)+'</span></div>').join('')+'</div>':'';
- const p=r?.proposal;
- const proposal=p&&!pbAi.saved?'<section class="pb-ai-proposal"><small>PROPOSED TEAM NOTE · REVIEW BEFORE SAVING</small><strong>'+esc(p.guide_title)+'</strong><p>'+esc(p.text)+'</p><div class="pb-ai-proposal-bottom"><span>This adds a shared note. It does not change official steps.</span><button type="button" data-pb-ai="save-note">Save team note</button></div></section>':pbAi.saved?'<div class="pb-ai-saved">✓ Team note saved to the Playbook.</div>':'';
+ const p=r?.proposal, saved=pbAi.messages[index]?.saved;
+ const proposal=p&&!saved?'<section class="pb-ai-proposal"><small>PROPOSED TEAM NOTE · REVIEW BEFORE SAVING</small><strong>'+esc(p.guide_title)+'</strong><p>'+esc(p.text)+'</p><div class="pb-ai-proposal-bottom"><span>This adds a shared note. It does not change official steps.</span><button type="button" data-pb-ai="save-note" data-msg-index="'+index+'" '+(pbAi.busyNote===index?'disabled':'')+'>'+(pbAi.busyNote===index?'Saving…':'Save team note')+'</button></div></section>':saved?'<div class="pb-ai-saved">✓ Team note saved to the Playbook.</div>':'';
  const gtt=r?.gtt?.url&&/^https:\/\//.test(r.gtt.url)?'<a class="pb-ai-gtt" href="'+esc(r.gtt.url)+'" target="_blank" rel="noopener noreferrer">↗ Open Global Trade Tool for live trade values and promotions</a>':'';
- const output=(pbAi.loading?'<div class="pb-ai-status" role="status">Finding the right steps in the Playbook…</div>':'')+(pbAi.error?'<div class="pb-ai-error" role="alert">'+esc(pbAi.error)+'</div>':'')+(r?'<section class="pb-ai-answer" aria-label="Playbook AI answer"><div class="pb-ai-answer-head"><span>✦ PLAYBOOK ASSISTANT</span><small>Linked Playbook references</small></div><p>'+esc(r.answer)+'</p>'+steps+refs+proposal+gtt+'</section>':'');
- return '<div class="pb-ai-panel"><form id="pb-ai-form" class="pb-ai-form"><span aria-hidden="true">✦</span><input id="pb-ai-question" aria-label="Ask the Playbook assistant" autocomplete="off" maxlength="1000" placeholder="Ask how to finish a DF upgrade, find a button, or add a team note…" value="'+esc(pbAi.question)+'" required><button type="submit" '+(pbAi.loading?'disabled':'')+'>'+(pbAi.loading?'Checking…':'Ask AI →')+'</button></form><p class="pb-ai-disclaimer">Ask about procedures, not customers. Never enter customer names, phone numbers, account or payment details.</p>'+output+'</div>';
+ return '<section class="pb-ai-answer" aria-label="Playbook AI answer"><div class="pb-ai-answer-head"><span>✦ PLAYBOOK ASSISTANT</span><small>Linked Playbook references</small></div><p>'+esc(r.answer)+'</p>'+steps+refs+proposal+gtt+'</section>';
 }
+function pbAiSearchBox(){
+ const transcript=pbAi.messages.map((m,i)=>'<div class="pb-ai-chat-line '+(m.role==='user'?'is-user':'is-assistant')+'">'+(m.role==='user'?'<div class="pb-ai-chat-user">'+esc(m.text)+'</div>':pbAiResultHtml(m.result,i))+'</div>').join('');
+ const output='<div id="pb-ai-chat-thread" class="pb-ai-chat-thread" role="log" aria-label="Playbook assistant conversation" aria-live="polite">'+transcript+(pbAi.loading?'<div class="pb-ai-status" role="status">Checking the Playbook and previous question…</div>':'')+'</div>';
+ const newChat=pbAi.messages.length?'<button type="button" class="pb-ai-chat-reset" data-pb-ai="new-chat">↻ New chat</button>':'';
+ return '<div class="pb-ai-panel"><div class="pb-ai-chat-bar"><div><strong>✦ Ask the Playbook</strong><small>Quick answers from your team’s procedures</small></div>'+newChat+'</div>'+(pbAi.messages.length?output:'<p class="pb-ai-chat-hint">Ask a question, then keep asking follow-ups without repeating the transaction.</p>')+'<form id="pb-ai-form" class="pb-ai-form"><span aria-hidden="true">✦</span><input id="pb-ai-question" aria-label="Ask the Playbook assistant" autocomplete="off" maxlength="1000" placeholder="'+(pbAi.messages.length?'Ask a follow-up, or switch topics…':'Ask about DF upgrades, shared upgrades, or a team note…')+'" value="'+esc(pbAi.question)+'" required><button type="submit" '+(pbAi.loading?'disabled':'')+'>'+(pbAi.loading?'Checking…':'Ask AI →')+'</button></form>'+(pbAi.error?'<div class="pb-ai-error" role="alert">'+esc(pbAi.error)+'</div>':'')+'<p class="pb-ai-disclaimer">No customer names, phone numbers, account or payment details. Conversation resets with New chat or a page reload.</p></div>';
+}
+function pbAiScroll(){const box=document.getElementById('pb-ai-chat-thread');if(box)box.scrollTop=box.scrollHeight;}
 function pbAiTeamNotes(id){
  const notes=data.annotations.filter(a=>a.guide_id===id&&a.kind==='note'&&!a.needs_review).slice(-4).reverse();
  if(!notes.length)return '';
@@ -613,36 +748,123 @@ function pbAiTeamNotes(id){
 async function pbAiAsk(){
  if(pbAi.loading||!authed())return;
  const question=pbAi.question.trim();if(question.length<3){pbAi.error='Enter a question to ask the Playbook.';render();return}
- pbAi.loading=true;pbAi.error='';pbAi.result=null;pbAi.saved=false;render();
+ // Each backend request gets recent turns plus the latest referenced guide; never a whole lifetime of chat.
+ const recent=pbAi.messages.slice(-10).map(m=>({role:m.role,text:m.role==='user'?m.text:m.result?.answer||''}));
+ const lastReply=[...pbAi.messages].reverse().find(m=>m.role==='assistant');
+ const context_guide_id=lastReply?.result?.sources?.[0]?.guide_id||null;
+ pbAi.messages.push({role:'user',text:question});pbAi.question='';pbAi.loading=true;pbAi.error='';render();pbAiScroll();
  try{
-  const {data:reply,error}=await sb.functions.invoke('playbook-ai',{body:{question}});
+  const {data:reply,error}=await sb.functions.invoke('playbook-ai',{body:{question,history:recent,context_guide_id}});
   if(error){let msg=error.message||'The assistant is unavailable.';try{if(error.context&&typeof error.context.json==='function'){const detail=await error.context.json();msg=detail.error||msg}}catch{}throw Error(msg)}
   if(reply?.error)throw Error(reply.error);
   if(!reply||typeof reply.answer!=='string')throw Error('The AI response was incomplete. Try again.');
-  pbAi.result=reply;
- }catch(e){pbAi.error=e?.message||'The assistant could not answer right now. Use the regular guide.'}
- finally{pbAi.loading=false;render();}
+  pbAi.messages.push({role:'assistant',result:reply,saved:false});
+ }catch(e){pbAi.error=e?.message||'The assistant could not answer right now. Use the regular guide.';pbAi.question=question;pbAi.messages.pop();}
+ finally{pbAi.loading=false;render();pbAiScroll();}
 }
-async function pbAiSaveNote(){
- const p=pbAi.result?.proposal;if(!p||pbAi.saved||!authed())return;
- const valid=data.steps.some(s=>s.guide_id===p.guide_id&&s.slug===p.step_slug),g=guide(p.guide_id);
+async function pbAiSaveNote(index){
+ const entry=pbAi.messages[index],p=entry?.result?.proposal;
+ if(!p||entry.saved||pbAi.busyNote>=0||!authed())return;
+ const valid=data.steps.some(s=>s.guide_id===p.guide_id&&s.slug===p.step_slug)||(String(p.step_slug||'').startsWith('notebook--')&&!!nbPersisted(p.guide_id)?.sections.some(s=>p.step_slug==='notebook--'+s.id)),g=guide(p.guide_id);
  if(!valid||!g){pbAi.error='That reference has changed. Ask the assistant again.';render();return}
  const text=String(p.text||'').trim();if(!text||text.length>450)return;
  if(!window.confirm('Save this shared note under '+g.title+'?\n\n'+text))return;
- const result=await sb.from('pb_annotations').insert({guide_id:p.guide_id,step_slug:p.step_slug,author_id:me.id,kind:'note',note_text:text,color:'#f5d94b'});
- if(result.error){pbAi.error=result.error.message;render();return}
- pbAi.saved=true;await loadData();notify('Shared Playbook note saved');
+ pbAi.busyNote=index;render();
+ try{const result=await sb.from('pb_annotations').insert({guide_id:p.guide_id,step_slug:p.step_slug,author_id:me.id,kind:'note',note_text:text,color:'#f5d94b'});
+  if(result.error)throw result.error;
+  entry.saved=true;await loadData();notify('Shared Playbook note saved');
+ }catch(e){pbAi.error=e?.message||'Could not save that note.';}finally{pbAi.busyNote=-1;render();pbAiScroll();}
 }
 document.addEventListener('submit',e=>{if(e.target?.id==='pb-ai-form'){e.preventDefault();e.stopImmediatePropagation();pbAi.question=String(document.querySelector('#pb-ai-question')?.value||'').slice(0,1000);void pbAiAsk()}},true);
 document.addEventListener('input',e=>{if(e.target?.id==='pb-ai-question')pbAi.question=String(e.target.value||'').slice(0,1000)},true);
 document.addEventListener('click',e=>{
  const btn=e.target.closest('button[data-pb-ai],button[data-pb-ai-ref]');if(!btn)return;
  e.preventDefault();e.stopImmediatePropagation();if(!authed())return;
- if(btn.dataset.pbAi==='save-note'){void pbAiSaveNote();return}
+ if(btn.dataset.pbAi==='new-chat'){if(pbAi.loading)return;pbAi={question:'',loading:false,error:'',messages:[],busyNote:-1};render();document.getElementById('pb-ai-question')?.focus();return;}
+ if(btn.dataset.pbAi==='save-note'){void pbAiSaveNote(Number(btn.dataset.msgIndex));return;}
  const id=btn.dataset.pbAiRef,slug=btn.dataset.pbAiStep;
  if(!guide(id))return;
- navigate('reader',id);tx.view='reference';ui.open[openKey(id,slug)]=true;render();
- setTimeout(()=>{const el=[...document.querySelectorAll('[data-step]')].find(x=>x.dataset.step===slug);el?.scrollIntoView({behavior:'smooth',block:'center'})},80);
+ navigate('reader',id);if(String(slug).startsWith('notebook--')){tx.view='walkthrough';render();setTimeout(()=>{const elem=document.getElementById('nb-'+slug.slice('notebook--'.length));if(elem?.tagName==='DETAILS')elem.open=true;elem?.scrollIntoView({behavior:'smooth',block:'center'})},80)}else{tx.view='reference';ui.open[openKey(id,slug)]=true;render();setTimeout(()=>{const el=[...document.querySelectorAll('[data-step]')].find(x=>x.dataset.step===slug);el?.scrollIntoView({behavior:'smooth',block:'center'})},80)};
 },true);
+
+
+// Personal annotations are separate from official guide steps and shared team notes.
+// Saved on this device per signed-in user and guide; no customer information should be entered.
+const NB_PERSONAL_COLORS=['#172b43','#d94747','#2579d9','#269c69','#f2cb34','#9b5fce'];
+let nbPersonal={tool:'read',color:'#f2cb34',marks:[],guide:'',drawing:null,ready:false};
+function nbPersonalKey(){return 'playbook-personal-v1:'+(me?.id||'guest')+':'+ui.guide}
+function nbPersonalLoad(){
+ const key=nbPersonalKey();
+ if(nbPersonal.guide===key)return;
+ nbPersonal.guide=key;nbPersonal.tool='read';nbPersonal.drawing=null;
+ try{const marks=JSON.parse(localStorage.getItem(key)||'[]');nbPersonal.marks=Array.isArray(marks)?marks.slice(-450):[]}catch{nbPersonal.marks=[]}
+}
+function nbPersonalSave(){try{localStorage.setItem(nbPersonalKey(),JSON.stringify(nbPersonal.marks.slice(-450)))}catch{notify('Personal notes could not be saved on this device')}}
+function nbPersonalToolbar(){
+ nbPersonalLoad();
+ const options=[['read','↕ Read only'],['pen','✎ Pen'],['highlight','▰ Highlight'],['text','T Text'],['erase','⌫ Erase']];
+ return '<div class="nb-personal-dock" role="toolbar" aria-label="Personal notebook tools">'+options.map(([tool,label])=>'<button type="button" data-personal-tool="'+tool+'" class="'+(nbPersonal.tool===tool?'active':'')+'" aria-pressed="'+(nbPersonal.tool===tool)+'">'+label+'</button>').join('')+'<button type="button" data-personal-undo '+(!nbPersonal.marks.length?'disabled':'')+' title="Undo last personal mark">↶ Undo</button><div class="nb-personal-colors">'+NB_PERSONAL_COLORS.map(c=>'<button type="button" data-personal-color="'+c+'" class="nb-personal-color '+(nbPersonal.color===c?'active':'')+'" style="background:'+c+'" aria-label="Select '+c+' ink" title="'+c+'"></button>').join('')+'</div></div>';
+}
+function nbPersonalCanvas(){
+ const paper=document.querySelector('.nb-paper'),canvas=paper?.querySelector('.nb-personal-layer');
+ if(!canvas||!paper)return;
+ nbPersonalLoad();
+ const w=paper.clientWidth,h=paper.scrollHeight;
+ const dpr=Math.min(window.devicePixelRatio||1,2);
+ canvas.width=Math.max(1,Math.round(w*dpr));canvas.height=Math.max(1,Math.round(h*dpr));
+ canvas.style.width=w+'px';canvas.style.height=h+'px';
+ canvas.classList.toggle('is-active',nbPersonal.tool!=='read');
+ const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
+ const draw=m=>{
+  if(m.kind==='text')return;
+  const pts=m.points||[];if(!pts.length)return;
+  ctx.save();ctx.globalAlpha=m.kind==='highlight'?.32:1;ctx.strokeStyle=m.color||'#172b43';ctx.lineWidth=m.kind==='highlight'?20:2.8;ctx.lineCap='round';ctx.lineJoin='round';ctx.beginPath();
+  pts.forEach((pt,i)=>{const x=pt[0]*w,y=pt[1];i?ctx.lineTo(x,y):ctx.moveTo(x,y)});
+  if(pts.length===1){ctx.lineTo(pts[0][0]*w+.1,pts[0][1]+.1)}
+  ctx.stroke();ctx.restore();
+ };
+ nbPersonal.marks.forEach(draw);
+ if(nbPersonal.drawing)draw(nbPersonal.drawing);
+ paper.querySelectorAll('.nb-personal-text').forEach(el=>el.remove());
+ for(const mark of nbPersonal.marks.filter(m=>m.kind==='text')){
+  const el=document.createElement('div');el.className='nb-personal-text';el.textContent=mark.text;el.style.color=mark.color;el.style.left=(mark.x*w)+'px';el.style.top=mark.y+'px';paper.appendChild(el);
+ }
+ canvas.onpointerdown=e=>{
+  if(nbPersonal.tool==='read')return;
+  const r=canvas.getBoundingClientRect(),x=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width)),y=Math.max(0,e.clientY-r.top);
+  if(nbPersonal.tool==='text'){
+   const text=prompt('Personal notebook note (saved on this device):');if(text?.trim()){nbPersonal.marks.push({kind:'text',x,y,color:nbPersonal.color,text:text.trim().slice(0,400)});nbPersonalSave();nbPersonalCanvas()}return;
+  }
+  if(nbPersonal.tool==='erase'){
+   const near=m=>m.kind==='text'?Math.hypot((m.x-x)*w,m.y-y)<65:(m.points||[]).some(p=>Math.hypot((p[0]-x)*w,p[1]-y)<28);
+   const ix=nbPersonal.marks.findLastIndex(near);
+   if(ix>=0){nbPersonal.marks.splice(ix,1);nbPersonalSave();nbPersonalCanvas()}
+   return;
+  }
+  nbPersonal.drawing={kind:nbPersonal.tool,color:nbPersonal.color,points:[[x,y]]};
+  try{canvas.setPointerCapture(e.pointerId)}catch{}
+  e.preventDefault();nbPersonalCanvas();
+ };
+ canvas.onpointermove=e=>{
+  if(!nbPersonal.drawing)return;
+  const r=canvas.getBoundingClientRect(),x=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width)),y=Math.max(0,e.clientY-r.top);
+  nbPersonal.drawing.points.push([x,y]);
+  if(nbPersonal.drawing.points.length>1000)nbPersonal.drawing.points.splice(1,1);
+  e.preventDefault();nbPersonalCanvas();
+ };
+ const finish=e=>{if(!nbPersonal.drawing)return;nbPersonal.marks.push(nbPersonal.drawing);nbPersonal.drawing=null;nbPersonalSave();nbPersonalCanvas();e.preventDefault()};
+ canvas.onpointerup=finish;canvas.onpointercancel=finish;
+}
+const nbPersonalOldRender=render;
+render=function(){nbPersonalOldRender();if(authed()&&ui.page==='reader'&&tx.view!=='reference'&&document.querySelector('.nb-personal-layer'))requestAnimationFrame(nbPersonalCanvas)};
+document.addEventListener('click',e=>{
+ const t=e.target.closest('[data-personal-tool],[data-personal-color],[data-personal-undo]');if(!t)return;
+ e.preventDefault();e.stopImmediatePropagation();
+ if(t.dataset.personalTool)nbPersonal.tool=t.dataset.personalTool;
+ if(t.dataset.personalColor)nbPersonal.color=t.dataset.personalColor;
+ if(t.hasAttribute('data-personal-undo')){nbPersonal.marks.pop();nbPersonalSave()}
+ render();
+},true);
+window.addEventListener('resize',()=>{if(document.querySelector('.nb-personal-layer'))requestAnimationFrame(nbPersonalCanvas)});
 
 </script></body></html>
