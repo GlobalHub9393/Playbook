@@ -114,6 +114,23 @@ body{background:var(--tx-base);color:var(--tx-ink);font-family:ui-sans-serif,-ap
 @media(max-width:760px){.nb-personal-dock{bottom:calc(67px + env(safe-area-inset-bottom));padding:8px;gap:5px;border-radius:12px;width:calc(100vw - 18px)}.nb-personal-dock button{font-size:11px;min-height:34px;padding:6px 8px}.nb-personal-colors{gap:5px}.nb-personal-dock .nb-personal-color{width:22px;height:22px;min-height:22px}.tx-workspace{padding-bottom:155px}}
 @media(max-width:440px){.nb-personal-dock{gap:5px}.nb-personal-colors{flex-basis:100%;border-left:0;border-top:1px solid #e3ded3;padding:6px 0 0;justify-content:center}.nb-personal-dock button{flex:1}}
 @media print{.nb-personal-dock,.nb-personal-layer,.nb-personal-text{display:none!important}}
+
+/* Connected procedure pilot: concise steps, contextual choices, and return-to-step navigation. */
+.nb-smart-choice{margin:14px 0 18px;padding:15px 18px;background:#f5f1e6;border:1px solid #e0d5bc;border-radius:12px}
+.nb-smart-choice>p{font-weight:700;margin:0 0 12px}
+.nb-smart-choice-buttons{display:flex;gap:9px;flex-wrap:wrap}
+.nb-smart-choice-buttons button{border:1px solid #b6b2a6;border-radius:9px;background:#fffdf8;padding:12px 14px;color:#253c50;font-weight:700;cursor:pointer}
+.nb-smart-choice-buttons button.selected{background:#253c50;color:white}
+.nb-smart-result{margin-top:14px;padding:14px;border-left:3px solid #bf7454;background:#fffdf8}
+.nb-smart-result p{margin:7px 0 12px}
+.nb-smart-subflow{padding:36px 45px 130px;max-width:900px;margin:auto}
+.nb-smart-subflow h2{font-family:Georgia,serif;font-size:32px;color:#243d54;margin:22px 0 12px}
+.nb-smart-crumb{font-size:12px;letter-spacing:.04em;color:#77746d;margin-bottom:20px}
+.nb-smart-port-step{border-bottom:1px solid #ded5c4;padding:14px 4px}
+.nb-smart-port-step summary{cursor:pointer;color:#273d52;font-size:18px}
+.nb-smart-port-step>div{padding:12px 22px;line-height:1.65}
+.nb-smart-warning{background:#fff0dc;padding:10px 12px;border-left:3px solid #bc7951}
+@media(max-width:650px){.nb-smart-subflow{padding:20px 18px 130px}.nb-smart-subflow h2{font-size:26px}}
 </style></head><body><div id="app"><div class="login-wrap"><section class="login-card"><div class="eyebrow">GLOBAL WIRELESS · CINNAMINSON</div><h1>The Playbook</h1><p id="startup-message">Opening the store notebook…</p></section></div></div><div id="print-root" class="print-only"></div><div id="modal-root"></div><div id="toast-root" class="toast" style="display:none"></div><script>// Cinnaminson Playbook: authenticated data is kept in Supabase, not in this public source.
 const SUPABASE_URL='https://uwomiirfvllcafijmkmk.supabase.co';
 const PUBLIC_KEY='sb_publishable_UMb8Nb5DG0w1dv9h5W5-2Q_0PinuBV4';
@@ -627,8 +644,30 @@ function nbBaseDoc(id){
  });
  return {v:2,sections,updated:'based-on-existing-guides'};
 }
+// Transaction-first pilot: the old New Line notebook is preserved in the source reference.
+const NB_NEW_LINE_SMART={v:2,smart:true,updated:'transaction-first-pilot',sections:[
+{id:'nl-open',type:'main',title:'Open the customer',actions:['In ACC, select Assist Customer Now.','Choose New Customer.','Enter the service address and select Check Availability.','Choose WIRELESS, then Continue to OPUS.'],warning:'For an existing account adding a line, use Add a Line instead.',why:'This opens the correct OPUS sales workflow.',review:false},
+{id:'nl-verify',type:'main',title:'Complete customer setup',actions:['Follow the OPUS identity and credit prompts.','Confirm the correct customer and account details.','Continue to Bundle Builder.'],warning:'Credit and identity screens can differ by customer. Do not skip a required prompt.',why:'The account must be eligible before equipment selection.',review:true},
+{id:'nl-device',type:'main',title:'Choose the device',actions:['Select Device Selection.','For an in-stock phone, scan the device and verify the model and storage.','For BYOD or a shipped phone, open the relevant option below.'],warning:'Do not Park Equipment for a New Line.',why:'The equipment path changes depending on how the customer receives the phone.',review:false},
+{id:'nl-number',type:'main',title:'Choose the phone number',actions:['Ask whether the customer wants a new number or to keep an existing number.'],warning:'If transferring a number, do not cancel service with the old carrier.',why:'A number transfer has its own checks and can affect activation timing.',review:false},
+{id:'nl-plan',type:'main',title:'Select plan and options',actions:['Select the requested eligible rate plan.','Check the current promotional requirements.','Ask about Next Up Anytime, protection, and accessories; add only what the customer agrees to.'],warning:'Verify current offer terms in CCKM and the actual OPUS quote.',why:'Plan selection can change promotion eligibility and monthly cost.',review:false},
+{id:'nl-finish',type:'main',title:'Review and finish',actions:['Review the complete monthly and today-due amounts with the customer.','Confirm the correct number, device, plan, and payment terms.','Finish checkout and provide the receipt.','Verify activation and service where practical.'],warning:'For a shipped phone, follow the shipping/pickup process instead of assuming immediate activation.',why:'Confirm the customer understands the actual charges and timing.',review:false},
+{id:'nl-byod',type:'variation',title:'Using the customer’s phone (BYOD)',actions:['In Device Selection, choose the BYOD option.','Enter or scan the customer phone IMEI as prompted.','Verify device compatibility and SIM/eSIM.','Return to the New Line procedure.'],warning:'Do not assume every device is compatible.',why:'',review:true},
+{id:'nl-shipping',type:'variation',title:'Ordering a shipped phone',actions:['At Device Selection, open the device catalog.','Choose the model, storage and color.','Review estimated delivery and select Ship to Store where available.','Complete the order and arrange customer pickup.'],warning:'Follow the actual payment and activation prompts. Shipping availability varies.',why:'',review:true}
+]};
+let nbSubflow=null;
+function nbPortSteps(){
+ const p=(TX_GUIDES['new-line']||[]).find(x=>x.id==='port');
+ return p?.steps||[];
+}
+function nbPortPanel(){
+ const steps=nbPortSteps();
+ return '<div class="nb-smart-subflow"><div class="nb-smart-crumb">New Line · Choose phone number · <strong>Number transfer</strong></div><button class="nb-btn" data-nb-smart="return">← Return to New Line, Step 4</button><h2>Transfer a phone number</h2><p>Follow these steps, then return to your New Line transaction. Your selections stay in place.</p>'+steps.map((x,i)=>{const a=txSingleStep(x);return '<details class="nb-smart-port-step" '+(i===0?'open':'')+'><summary><b>'+(i+1)+'. '+esc(a.title)+'</b></summary><div>'+a.actions.map(y=>'<p>• '+esc(y)+'</p>').join('')+(a.help?'<p class="nb-smart-warning">'+esc(a.help)+'</p>':'')+'</div></details>'}).join('')+'<button class="nb-btn primary" data-nb-smart="return">✓ Done — return to New Line, Step 4</button></div>';
+}
+function nbSmartNumber(){return '<div class="nb-smart-choice"><p>Is the customer keeping their current phone number?</p><div class="nb-smart-choice-buttons"><button data-nb-smart="number" data-value="new" class="'+(nbSmartSelection==='new'?'selected':'')+'">No · New number</button><button data-nb-smart="number" data-value="port" class="'+(nbSmartSelection==='port'?'selected':'')+'">Yes · Transfer number</button></div>'+(nbSmartSelection==='new'?'<div class="nb-smart-result"><strong>New number</strong><p>In OPUS, choose the new-number option. Select an available number and confirm it before continuing.</p></div>':nbSmartSelection==='port'?'<div class="nb-smart-result"><strong>Number transfer</strong><p>Open the linked porting instructions, then come right back to this step.</p><button class="nb-btn primary" data-nb-smart="port">Open porting steps ↗</button></div>':'')+'</div>'}
+let nbSmartSelection='';
 function nbPersisted(id){const rec=data.steps.find(s=>s.guide_id===id&&s.slug===NB_SLUG);if(!rec)return null;try{const obj=JSON.parse(rec.body);if(obj.v===2&&Array.isArray(obj.sections))return obj}catch{}return null;}
-function nbDoc(id){if(nb.guide!==id){nb={guide:id,edit:false,dirty:false,draft:null,checks:new Set(),aiOpen:false,modal:null};}return nb.edit&&nb.draft?nb.draft:(nbPersisted(id)||nbBaseDoc(id));}
+function nbDoc(id){if(nb.guide!==id){nb={guide:id,edit:false,dirty:false,draft:null,checks:new Set(),aiOpen:false,modal:null};}return nb.edit&&nb.draft?nb.draft:(id==='new-line'&&!nbPersisted(id)?.smart?nbClone(NB_NEW_LINE_SMART):(nbPersisted(id)||nbBaseDoc(id)));}
 function nbSafe(s){return String(s||'').slice(0,12000)}
 function nbActionHtml(line,index,sec){if(line.startsWith('§ '))return '<div class="nb-action" style="border:0;padding-top:15px"><span class="nb-subheading">'+esc(line.slice(2))+'</span></div>';
  const k=sec.id+'|'+index,checked=nb.checks.has(k);return '<label class="nb-action '+(checked?'checked':'')+'"><input type="checkbox" data-nb-check="'+esc(k)+'" '+(checked?'checked':'')+'><span>'+linkify(line)+'</span></label>';}
@@ -636,6 +675,7 @@ function nbVisibleNotes(gid,id){return data.annotations.filter(a=>a.guide_id===g
 function nbSection(s,i,variant){const editing=nb.edit;
  const tools=editing?'<div class="nb-edit-tools"><button data-nb="edit-section" data-id="'+esc(s.id)+'">✎ Edit</button><button data-nb="move-up" data-id="'+esc(s.id)+'">↑ Move</button><button data-nb="move-down" data-id="'+esc(s.id)+'">↓ Move</button><button data-nb="insert" data-after="'+esc(s.id)+'">＋ Below</button><button data-nb="delete" data-id="'+esc(s.id)+'">Remove</button></div>':'';
  const actions=(s.actions||[]).map((a,k)=>nbActionHtml(String(a),k,s)).join('')||'<div class="nb-empty">No actions added yet.</div>';
+ const smartNumber=ui.guide==='new-line'&&s.id==='nl-number'&&!nb.edit?nbSmartNumber():'';
  const warning=s.warning?'<div class="nb-section-warning"><strong>Note:</strong> '+esc(s.warning)+'</div>':'';
  const why=s.why?'<details class="nb-why"><summary>Why? · Show explanation</summary><p>'+esc(s.why)+'</p></details>':'';
  const notes=nbVisibleNotes(ui.guide,s.id);
@@ -645,6 +685,7 @@ function nbSection(s,i,variant){const editing=nb.edit;
  return '<section id="nb-'+esc(s.id)+'" class="nb-section"><div class="nb-section-head"><span class="nb-section-number">'+String(i+1).padStart(2,'0')+'</span><div style="flex:1"><h2 class="nb-section-title">'+esc(s.title)+'</h2></div>'+(s.review?'<span class="nb-review">Verify details</span>':'')+'</div><div class="nb-actions">'+actions+'</div>'+warning+why+notes+addnote+tools+'</section>';
 }
 function nbReader(){
+ if(nbSubflow&&ui.guide==='new-line')return '<div class="nb-page"><article class="nb-paper">'+nbPortPanel()+'</article>'+nbPersonalToolbar()+'</div>';
  const g=guide(ui.guide);if(!g)return txHome();const doc=nbDoc(g.id),secs=doc.sections||[],main=secs.filter(s=>s.type!=='variation'),vars=secs.filter(s=>s.type==='variation');
  const edition=nb.edit?'<button class="nb-btn primary" data-nb="save" '+(nb.dirty?'':'disabled')+'>✓ Save changes'+(nb.dirty?' ●':'')+'</button><button class="nb-btn" data-nb="discard">Cancel editing</button>':admin()?'<button class="nb-btn primary" data-nb="edit">✎ Edit notebook</button>':'';
  const top='<div class="nb-toolbar"><button class="nb-btn" data-go="home">← All procedures</button><div class="nb-toolbar-actions">'+edition+'<button class="nb-btn" data-nb="ai">✦ Ask AI</button><button class="nb-btn" data-nb="print">⎙ Print</button></div></div>';
@@ -677,6 +718,13 @@ async function nbSave(){if(!admin()||!nb.edit||!nb.draft||!nb.dirty)return;
  const {error:revError}=await sb.from('pb_revisions').insert({guide_id:g,step_slug:NB_SLUG,actor_id:me.id,action:existing?'update_notebook':'create_notebook',previous_value:existing||null,next_value:vals});
  nb.edit=false;nb.draft=null;nb.dirty=false;await loadData();if(revError)notify('Saved, but revision history needs review.');else notify('Notebook saved to Supabase');}
 function nbHandle(id,after,type){const ix=nb.draft.sections.findIndex(x=>x.id===after);const s={id:nbId(),type:type||'main',title:'',actions:[],warning:'',why:'',review:false,caption:''};modal={type:'nbedit',section:s,new:true,insertAt:ix<0?nb.draft.sections.length:ix+1};renderModal();}
+document.addEventListener('click',e=>{
+ const b=e.target.closest('[data-nb-smart]');if(!b)return;
+ e.preventDefault();e.stopImmediatePropagation();
+ if(b.dataset.nbSmart==='number'){nbSmartSelection=b.dataset.value;render();setTimeout(()=>document.getElementById('nb-nl-number')?.scrollIntoView({block:'center'}),30)}
+ if(b.dataset.nbSmart==='port'){nbSubflow='port';render();window.scrollTo(0,0)}
+ if(b.dataset.nbSmart==='return'){nbSubflow=null;render();setTimeout(()=>document.getElementById('nb-nl-number')?.scrollIntoView({block:'center'}),40)}
+},true);
 document.addEventListener('change',e=>{if(e.target?.matches('[data-nb-check]')){const k=e.target.dataset.nbCheck;if(e.target.checked)nb.checks.add(k);else nb.checks.delete(k);e.target.closest('.nb-action')?.classList.toggle('checked',e.target.checked);}},true);
 document.addEventListener('click',async e=>{
  const b=e.target.closest('[data-nb]');if(!b||!authed())return;e.preventDefault();e.stopImmediatePropagation();const op=b.dataset.nb,id=b.dataset.id;
